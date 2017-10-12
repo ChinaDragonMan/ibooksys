@@ -1,16 +1,16 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <table width="778" height="66"  border="0" align="center" cellpadding="-2" cellspacing="-2" bgcolor="#FFFFFF">
       <tr>
         <td height="11" colspan="4" background="Images/copyright_t.gif"></td>
   </tr>
       <tr>
         <td width="124" height="23">&nbsp;</td>
-        <td valign="bottom" align="center"> CopyRight &copy; 2013 www.52itstyle.com <a href="http://www.52itstyle.com">¿Æ°ïÍø<a/></td>
+        <td valign="bottom" align="center"> CopyRight &copy; 2013 www.52itstyle.com <a href="http://www.52itstyle.com">ç§‘å¸®ç½‘<a/></td>
         <td width="141">&nbsp;</td>
       </tr>
       <tr>
         <td height="23">&nbsp;</td>
-        <td align="center">±¾Õ¾ÇëÊ¹ÓÃIE6.0»òÒÔÉÏ°æ±¾ 1024*768Îª×î¼ÑÏÔÊ¾Ð§¹û</td>
+        <td align="center">æœ¬ç«™è¯·ä½¿ç”¨IE6.0æˆ–ä»¥ä¸Šç‰ˆæœ¬ 1024*768ä¸ºæœ€ä½³æ˜¾ç¤ºæ•ˆæžœ</td>
         <td>&nbsp;</td>
       </tr>
       <tr>

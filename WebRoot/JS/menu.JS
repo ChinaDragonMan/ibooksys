@@ -1,5 +1,5 @@
-var menuOffX=0	//²Ëµ¥¾àÁ¬½ÓÎÄ×Ö×î×ó¶Ë¾àÀë
-var menuOffY=18	//²Ëµ¥¾àÁ¬½ÓÎÄ×Ö¶¥¶Ë¾àÀë
+var menuOffX=0	//èœå•è·è¿æ¥æ–‡å­—æœ€å·¦ç«¯è·ç¦»
+var menuOffY=18	//èœå•è·è¿æ¥æ–‡å­—é¡¶ç«¯è·ç¦»
 var fo_shadows=new Array()
 var linkset=new Array()
 var ie4=document.all&&navigator.userAgent.indexOf("Opera")==-1
@@ -173,22 +173,22 @@ function outbg(tdbg){
 tdbg.style.background='url(.Images/item_out.gif)'
 tdbg.style.border=''
 }
-var sysmenu='<table width=80><tr><td id=library onMouseOver=overbg(library) onMouseOut=outbg(library)><a href=library.do?action=libraryQuery>Í¼Êé¹İĞÅÏ¢</a></td></tr>\
-<tr><td id=manager onMouseOver=overbg(manager) onMouseOut=outbg(manager)><a href=manager.do?action=managerQuery>¹ÜÀíÔ±ÉèÖÃ</a></td></tr>\
-<tr><td id=para onMouseOver=overbg(para) onMouseOut=outbg(para)><a href=parameter.do?action=parameterQuery>²ÎÊıÉèÖÃ</a></td></tr>\
-<tr><td id=bookcase onMouseOver=overbg(bookcase) onMouseOut=outbg(bookcase)><a href=bookCase.do?action=bookCaseQuery>Êé¼ÜÉèÖÃ</a></td></tr>\
+var sysmenu='<table width=80><tr><td id=library onMouseOver=overbg(library) onMouseOut=outbg(library)><a href=library.do?action=libraryQuery>å›¾ä¹¦é¦†ä¿¡æ¯</a></td></tr>\
+<tr><td id=manager onMouseOver=overbg(manager) onMouseOut=outbg(manager)><a href=manager.do?action=managerQuery>ç®¡ç†å‘˜è®¾ç½®</a></td></tr>\
+<tr><td id=para onMouseOver=overbg(para) onMouseOut=outbg(para)><a href=parameter.do?action=parameterQuery>å‚æ•°è®¾ç½®</a></td></tr>\
+<tr><td id=bookcase onMouseOver=overbg(bookcase) onMouseOut=outbg(bookcase)><a href=bookCase.do?action=bookCaseQuery>ä¹¦æ¶è®¾ç½®</a></td></tr>\
 </table>'
-var readermenu='<table width=90><tr><td id=readerType onMouseOver=overbg(readerType) onMouseOut=outbg(readerType)><a href=readerType.do?action=readerTypeQuery>¶ÁÕßÀàĞÍ¹ÜÀí</a></td></tr>\
-<tr><td id=reader onMouseOver=overbg(reader) onMouseOut=outbg(reader)><a href=reader.do?action=readerQuery>¶ÁÕßµµ°¸¹ÜÀí</a></td></tr>\
+var readermenu='<table width=90><tr><td id=readerType onMouseOver=overbg(readerType) onMouseOut=outbg(readerType)><a href=readerType.do?action=readerTypeQuery>è¯»è€…ç±»å‹ç®¡ç†</a></td></tr>\
+<tr><td id=reader onMouseOver=overbg(reader) onMouseOut=outbg(reader)><a href=reader.do?action=readerQuery>è¯»è€…æ¡£æ¡ˆç®¡ç†</a></td></tr>\
 </table>'
-var bookmenu='<table width=90><tr><td id=bookType onMouseOver=overbg(bookType) onMouseOut=outbg(bookType)><a href=bookType.do?action=bookTypeQuery>Í¼ÊéÀàĞÍÉèÖÃ</a></td></tr>\
-<tr><td id=book onMouseOver=overbg(book) onMouseOut=outbg(book)><a href=book.do?action=bookQuery>Í¼Êéµµ°¸¹ÜÀí</a></td></tr>\
+var bookmenu='<table width=90><tr><td id=bookType onMouseOver=overbg(bookType) onMouseOut=outbg(bookType)><a href=bookType.do?action=bookTypeQuery>å›¾ä¹¦ç±»å‹è®¾ç½®</a></td></tr>\
+<tr><td id=book onMouseOver=overbg(book) onMouseOut=outbg(book)><a href=book.do?action=bookQuery>å›¾ä¹¦æ¡£æ¡ˆç®¡ç†</a></td></tr>\
 </table>'
-var borrowmenu='<table width=60><tr><td id=Borrow onMouseOver=overbg(Borrow) onMouseOut=outbg(Borrow)><a href=bookBorrow.jsp>Í¼Êé½èÔÄ</a></td></tr>\
-<tr><td id=renew onMouseOver=overbg(renew) onMouseOut=outbg(renew)><a href=bookRenew.jsp>Í¼ÊéĞø½è</a></td></tr>\
-<tr><td id=giveback onMouseOver=overbg(giveback) onMouseOut=outbg(giveback)><a href=bookBack.jsp>Í¼Êé¹é»¹</a></td></tr>\
+var borrowmenu='<table width=60><tr><td id=Borrow onMouseOver=overbg(Borrow) onMouseOut=outbg(Borrow)><a href=bookBorrow.jsp>å›¾ä¹¦å€Ÿé˜…</a></td></tr>\
+<tr><td id=renew onMouseOver=overbg(renew) onMouseOut=outbg(renew)><a href=bookRenew.jsp>å›¾ä¹¦ç»­å€Ÿ</a></td></tr>\
+<tr><td id=giveback onMouseOver=overbg(giveback) onMouseOut=outbg(giveback)><a href=bookBack.jsp>å›¾ä¹¦å½’è¿˜</a></td></tr>\
 </table>'
-var querymenu='<table width=90><tr><td id=bookQuery onMouseOver=overbg(bookQuery) onMouseOut=outbg(bookQuery)><a href=book.do?action=bookifQuery>Í¼Êéµµ°¸²éÑ¯</a></td></tr>\
-<tr><td id=borrowQuery onMouseOver=overbg(borrowQuery) onMouseOut=outbg(borrowQuery)><a href=borrow.do?action=borrowQuery>Í¼Êé½èÔÄ²éÑ¯</a></td></tr>\
-<tr><td id=givebackQuery onMouseOver=overbg(givebackQuery) onMouseOut=outbg(givebackQuery)><a href=borrow.do?action=Bremind>½èÔÄµ½ÆÚÌáĞÑ</a></td></tr>\
+var querymenu='<table width=90><tr><td id=bookQuery onMouseOver=overbg(bookQuery) onMouseOut=outbg(bookQuery)><a href=book.do?action=bookifQuery>å›¾ä¹¦æ¡£æ¡ˆæŸ¥è¯¢</a></td></tr>\
+<tr><td id=borrowQuery onMouseOver=overbg(borrowQuery) onMouseOut=outbg(borrowQuery)><a href=borrow.do?action=borrowQuery>å›¾ä¹¦å€Ÿé˜…æŸ¥è¯¢</a></td></tr>\
+<tr><td id=givebackQuery onMouseOver=overbg(givebackQuery) onMouseOut=outbg(givebackQuery)><a href=borrow.do?action=Bremind>å€Ÿé˜…åˆ°æœŸæé†’</a></td></tr>\
 </table>'

@@ -2,6 +2,9 @@ package com.action;
 
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionForm;
+
+import java.io.UnsupportedEncodingException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForward;
@@ -17,6 +20,7 @@ public class Library extends Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response) {
+    	
         LibraryForm libraryForm=(LibraryForm) form;
         String str=request.getParameter("action");
         if("libraryQuery".equals(str)){
@@ -24,13 +28,15 @@ public class Library extends Action {
         }else if("libraryModify".equals(str)){
             return libraryModify(mapping,form,request,response);
         }
-        request.setAttribute("error","ƒ˙µƒ≤Ÿ◊˜”–ŒÛ£°");
+        request.setAttribute("error","ÊÇ®ÁöÑÊìç‰ΩúÊúâËØØÔºÅ");
         return mapping.findForward("error");
     }
     private ActionForward libraryModify(ActionMapping mapping, ActionForm form,
                                  HttpServletRequest request,
                                  HttpServletResponse response
 ){
+    	
+    	
         LibraryForm libraryForm = (LibraryForm) form;
         libraryForm.setId(libraryForm.getId());
         libraryForm.setLibraryname(libraryForm.getLibraryname());
@@ -43,7 +49,7 @@ public class Library extends Action {
         libraryForm.setIntroduce(libraryForm.getIntroduce());
         int ret = libraryDAO.update(libraryForm);
         if (ret ==0) {
-            request.setAttribute("error", "Õº Èπ›–≈œ¢–ﬁ∏ƒ ß∞‹£°");
+            request.setAttribute("error", "Âõæ‰π¶È¶Ü‰ø°ÊÅØ‰øÆÊîπÂ§±Ë¥•ÔºÅ");
             return mapping.findForward("error");
         } else {
             return mapping.findForward("librarymodify");
@@ -54,6 +60,7 @@ public class Library extends Action {
                                  HttpServletRequest request,
                                  HttpServletResponse response
 ){
+    	
         request.setAttribute("libraryModifyif",libraryDAO.query());
         return mapping.findForward("librarymodifyQuery");
     }

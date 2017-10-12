@@ -2,88 +2,118 @@ package com.actionForm;
 
 import org.apache.struts.action.ActionForm;
 
-public class LibraryForm extends ActionForm {
-    private String address;
-    private String curator;
-    private String email;
-    private Integer id;
-    private String introduce;
-    private String libraryname;
-    private String tel;
-    private String createDate;
-    private String url;
-    public LibraryForm(){
-    }
-    public String getAddress() {
-        return address;
-    }
+public class LibraryForm extends ActionForm
+{
+	private String address;
+	private String curator;
+	private String email;
+	private Integer id;
+	private String introduce;
+	private String libraryname;
+	private String tel;
+	private String createDate;
+	private String url;
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+	public LibraryForm()
+	{
+	}
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+	public String getAddress()
+	{
+		return address;
+	}
 
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
-    }
+	public void setAddress(String address)
+	{
+		this.address = address;
+	}
 
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
+	public void setUrl(String url)
+	{
+		this.url = url;
+	}
 
-    public void setLibraryname(String libraryname) {
-        this.libraryname = libraryname;
-    }
+	public void setCreateDate(String createDate)
+	{
+		this.createDate = createDate;
+	}
 
-    public void setIntroduce(String introduce) {
-        this.introduce = introduce;
-    }
+	public void setTel(String tel)
+	{
+		this.tel = tel;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setLibraryname(String libraryname)
+	{
+		this.libraryname = libraryname;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setIntroduce(String introduce)
+	{
+		this.introduce = introduce;
+	}
 
-    public void setCurator(String curator) {
-        this.curator = curator;
-    }
+	public void setId(Integer id)
+	{
+		this.id = id;
+	}
 
-    public String getCurator() {
-        return curator;
-    }
+	public void setEmail(String email)
+	{
+		this.email = email;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setCurator(String curator)
+	{
+		this.curator = curator;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public String getCurator()
+	{
+		return curator;
+	}
 
-    public String getIntroduce() {
-        return introduce;
-    }
+	public String getEmail()
+	{
+		return email;
+	}
 
-    public String getLibraryname() {
-        return libraryname;
-    }
+	public Integer getId()
+	{
+		return id;
+	}
 
-    public String getTel() {
-        return tel;
-    }
+	public String getIntroduce()
+	{
+		return introduce;
+	}
 
-    public String getCreateDate() {
-        return createDate;
-    }
+	public String getLibraryname()
+	{
+		return libraryname;
+	}
 
-    public String getUrl() {
-        return url;
-    }
+	public String getTel()
+	{
+		return tel;
+	}
+
+	public String getCreateDate()
+	{
+		return createDate;
+	}
+
+	public String getUrl()
+	{
+		return url;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "LibraryForm [address=" + address + ", curator=" + curator + ", email=" + email + ", id=" + id
+				+ ", introduce=" + introduce + ", libraryname=" + libraryname + ", tel=" + tel + ", createDate="
+				+ createDate + ", url=" + url + "]";
+	}
 
 }

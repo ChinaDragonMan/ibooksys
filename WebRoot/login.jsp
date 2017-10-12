@@ -1,16 +1,16 @@
-<%@ page contentType="text/html; charset=gb2312" language="java"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
-<title>¿Æ°ïÍøÍ¼Êé¹İ¹ÜÀíÏµÍ³</title>
+<title>ç§‘å¸®ç½‘å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 <script language="javascript">
 function check(form){
 	if (form.name.value==""){
-		alert("ÇëÊäÈë¹ÜÀíÔ±Ãû³Æ!");form.name.focus();return false;
+		alert("è¯·è¾“å…¥ç®¡ç†å‘˜åç§°!");form.name.focus();return false;
 	}
 	if (form.pwd.value==""){
-		alert("ÇëÊäÈëÃÜÂë!");form.pwd.focus();return false;
+		alert("è¯·è¾“å…¥å¯†ç !");form.pwd.focus();return false;
 	}	
 }
 </script>
@@ -51,23 +51,23 @@ function check(form){
                         </tr> 
                         <tr>
                           <td width="50%" height="37">&nbsp;</td>
-                      <td width="10%">¹ÜÀíÔ±Ãû³Æ£º</td>
+                      <td width="10%">ç®¡ç†å‘˜åç§°ï¼š</td>
                       <td width="31%">
                         <input name="name" type="text" class="logininput" id="name" size="27">                        </td>
                       <td width="9%">&nbsp;</td>
                     </tr>
                         <tr>
                           <td height="37">&nbsp;</td>
-                      <td>¹ÜÀíÔ±ÃÜÂë£º</td>
+                      <td>ç®¡ç†å‘˜å¯†ç ï¼š</td>
                       <td><input name="pwd" type="password" class="logininput" id="pwd" size="27"></td>
                       <td>&nbsp;</td>
                     </tr>
                         <tr>
                           <td height="30">&nbsp;</td>
-                      <td colspan="2" align="center"><input name="Submit" type="submit" class="btn_grey" value="È·¶¨" onClick="return check(form1)">
+                      <td colspan="2" align="center"><input name="Submit" type="submit" class="btn_grey" value="ç¡®å®š" onClick="return check(form1)">
                         &nbsp;
-                        <input name="Submit3" type="reset" class="btn_grey" value="ÖØÖÃ">&nbsp;
-                        <input name="Submit2" type="button" class="btn_grey" value="¹Ø±Õ" onClick="window.close();"></td>
+                        <input name="Submit3" type="reset" class="btn_grey" value="é‡ç½®">&nbsp;
+                        <input name="Submit2" type="button" class="btn_grey" value="å…³é—­" onClick="window.close();"></td>
                       <td>&nbsp;</td>
                     </tr>
                         </table> 
@@ -85,8 +85,8 @@ function check(form){
     </table>
       <table width="100%" height="27"  border="0" cellpadding="0" cellspacing="0">
         <tr>
-          <td align="center" class="word_login">CopyRight &copy; 2013 www.52itstyle.com <a href="http://www.52itstyle.com">¿Æ°ïÍø<a/><br>
-            ±¾Õ¾ÇëÊ¹ÓÃIE6.0»òÒÔÉÏ°æ±¾ 1024*768Îª×î¼ÑÏÔÊ¾Ğ§¹û</td>
+          <td align="center" class="word_login">CopyRight &copy; 2013 www.52itstyle.com <a href="http://www.52itstyle.com">ç§‘å¸®ç½‘<a/><br>
+            æœ¬ç«™è¯·ä½¿ç”¨IE6.0æˆ–ä»¥ä¸Šç‰ˆæœ¬ 1024*768ä¸ºæœ€ä½³æ˜¾ç¤ºæ•ˆæœ</td>
         </tr>
       </table></td>
   </tr>

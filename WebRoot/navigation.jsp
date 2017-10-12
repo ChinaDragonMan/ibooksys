@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="com.dao.ManagerDAO"%>
 <%@ page import="com.actionForm.ManagerForm"%>
 <%
@@ -18,7 +18,7 @@ if(form1!=null){
 }
 
 %>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="JS/onclock.JS"></script>
 <script src="JS/menu.JS"></script>
 <div class=menuskin id=popmenu
@@ -30,13 +30,13 @@ if(form1!=null){
         <td width="29%"><div id="bgclock" class="word_white"></div></td>
 		<script language="javascript">
 			function quit(){
-				if(confirm("���Ҫ�˳�ϵͳ��?")){
+				if(confirm("真的要退出系统吗?")){
 					window.location.href="logout.jsp";
 				}
 			}
 		</script>
-        <td width="66%" align="right" bgcolor="#B0690B" class="word_white"><a href="main.jsp" class="word_white">��ҳ</a> |
-        <%if(sysset1==1){%><a  onmouseover=showmenu(event,sysmenu) onmouseout=delayhidemenu() class="word_white" style="CURSOR:hand" >ϵͳ����</a> | <%}%><%if(readerset1==1){%><a  onmouseover=showmenu(event,readermenu) onmouseout=delayhidemenu() style="CURSOR:hand"  class="word_white">���߹���</a> | <%}%><%if(bookset1==1){%><a  onmouseover=showmenu(event,bookmenu) onmouseout=delayhidemenu() class="word_white" style="CURSOR:hand" >ͼ�����</a> | <%}%><%if(borrowback1==1){%><a  onmouseover=showmenu(event,borrowmenu) onmouseout=delayhidemenu() class="word_white" style="CURSOR:hand">ͼ��軹</a> | <%}%><%if(sysquery1==1){%><a  onmouseover=showmenu(event,querymenu) onmouseout=delayhidemenu()  class="word_white" style="CURSOR:hand" >ϵͳ��ѯ</a> | <%}%><a  href="manager.do?action=querypwd" class="word_white">���Ŀ���</a> | <a href="#" onClick="quit()" class="word_white">�˳�ϵͳ</a></td>
+        <td width="66%" align="right" bgcolor="#B0690B" class="word_white"><a href="main.jsp" class="word_white">首页</a> |
+        <%if(sysset1==1){%><a  onmouseover=showmenu(event,sysmenu) onmouseout=delayhidemenu() class="word_white" style="CURSOR:hand" >系统设置</a> | <%}%><%if(readerset1==1){%><a  onmouseover=showmenu(event,readermenu) onmouseout=delayhidemenu() style="CURSOR:hand"  class="word_white">读者管理</a> | <%}%><%if(bookset1==1){%><a  onmouseover=showmenu(event,bookmenu) onmouseout=delayhidemenu() class="word_white" style="CURSOR:hand" >图书管理</a> | <%}%><%if(borrowback1==1){%><a  onmouseover=showmenu(event,borrowmenu) onmouseout=delayhidemenu() class="word_white" style="CURSOR:hand">图书借还</a> | <%}%><%if(sysquery1==1){%><a  onmouseover=showmenu(event,querymenu) onmouseout=delayhidemenu()  class="word_white" style="CURSOR:hand" >系统查询</a> | <%}%><a  href="manager.do?action=querypwd" class="word_white">更改口令</a> | <a href="#" onClick="quit()" class="word_white">退出系统</a></td>
         <td width="2%" bgcolor="#B0690B">&nbsp;</td>
   </tr>
       <tr bgcolor="#DFA40C">

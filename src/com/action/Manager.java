@@ -17,7 +17,7 @@ public class Manager extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		String action = request.getParameter("action");
-		System.out.println("»ñÈ¡µÄ²éÑ¯×Ö·û´®£º" + action);
+		System.out.println("è·å–çš„æŸ¥è¯¢å­—ç¬¦ä¸²ï¼š" + action);
 		if (action == null || "".equals(action)) {
 			return mapping.findForward("error");
 		} else if ("login".equals(action)) {
@@ -37,11 +37,11 @@ public class Manager extends Action {
 		} else if ("modifypwd".equals(action)) {
 			return modifypwd(mapping, form, request, response);
 		}
-		request.setAttribute("error", "²Ù×÷Ê§°Ü£¡");
+		request.setAttribute("error", "æ“ä½œå¤±è´¥ï¼");
 		return mapping.findForward("error");
 	}
 
-	// ¹ÜÀíÔ±Éí·İÑéÖ¤
+	// ç®¡ç†å‘˜èº«ä»½éªŒè¯
 
 	public ActionForward managerLogin(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
@@ -49,18 +49,18 @@ public class Manager extends Action {
 		managerForm.setName(managerForm.getName());
 		managerForm.setPwd(managerForm.getPwd());
 		int ret = managerDAO.checkManager(managerForm);
-		System.out.print("ÑéÖ¤½á¹ûretµÄÖµ:" + ret);
+		System.out.print("éªŒè¯ç»“æœretçš„å€¼:" + ret);
 		if (ret == 1) {
 			HttpSession session = request.getSession();
 			session.setAttribute("manager", managerForm.getName());
 			return mapping.findForward("managerLoginok");
 		} else {
-			request.setAttribute("error", "ÄúÊäÈëµÄ¹ÜÀíÔ±Ãû³Æ»òÃÜÂë´íÎó£¡");
+			request.setAttribute("error", "æ‚¨è¾“å…¥çš„ç®¡ç†å‘˜åç§°æˆ–å¯†ç é”™è¯¯ï¼");
 			return mapping.findForward("error");
 		}
 	}
 
-	// ²éÑ¯¹ÜÀíÔ±ĞÅÏ¢
+	// æŸ¥è¯¢ç®¡ç†å‘˜ä¿¡æ¯
 	private ActionForward managerQuery(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		String str = null;
@@ -68,85 +68,85 @@ public class Manager extends Action {
 		return mapping.findForward("managerQuery");
 	}
 
-	// Ìí¼Ó¹ÜÀíÔ±ĞÅÏ¢
+	// æ·»åŠ ç®¡ç†å‘˜ä¿¡æ¯
 	private ActionForward managerAdd(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		ManagerForm managerForm = (ManagerForm) form;
-		managerForm.setName(managerForm.getName()); // »ñÈ¡ÉèÖÃ¹ÜÀíÔ±Ãû³Æ
-		managerForm.setPwd(managerForm.getPwd()); // »ñÈ¡²¢ÉèÖÃÃÜÂë
-		int ret = managerDAO.insert(managerForm); // µ÷ÓÃÌí¼Ó¹ÜÀíÔ±ĞÅÏ¢
+		managerForm.setName(managerForm.getName()); // è·å–è®¾ç½®ç®¡ç†å‘˜åç§°
+		managerForm.setPwd(managerForm.getPwd()); // è·å–å¹¶è®¾ç½®å¯†ç 
+		int ret = managerDAO.insert(managerForm); // è°ƒç”¨æ·»åŠ ç®¡ç†å‘˜ä¿¡æ¯
 		if (ret == 1) {
-			return mapping.findForward("managerAdd"); // ×ªµ½¹ÜÀíÔ±ĞÅÏ¢Ìí¼Ó³É¹¦Ò³Ãæ
+			return mapping.findForward("managerAdd"); // è½¬åˆ°ç®¡ç†å‘˜ä¿¡æ¯æ·»åŠ æˆåŠŸé¡µé¢
 		} else if (ret == 2) {
-			request.setAttribute("error", "¸Ã¹ÜÀíÔ±ĞÅÏ¢ÒÑ¾­Ìí¼Ó£¡"); // ½«´íÎóĞÅÏ¢±£´æµ½error²ÎÊıÖĞ
-			return mapping.findForward("error"); // ×ªµ½´íÎóÌáÊ¾Ò³Ãæ
+			request.setAttribute("error", "è¯¥ç®¡ç†å‘˜ä¿¡æ¯å·²ç»æ·»åŠ ï¼"); // å°†é”™è¯¯ä¿¡æ¯ä¿å­˜åˆ°errorå‚æ•°ä¸­
+			return mapping.findForward("error"); // è½¬åˆ°é”™è¯¯æç¤ºé¡µé¢
 		} else {
-			request.setAttribute("error", "Ìí¼Ó¹ÜÀíÔ±ĞÅÏ¢Ê§°Ü£¡"); // ½«´íÎóĞÅÏ¢±£´æµ½error²ÎÊıÖĞ
-			return mapping.findForward("error"); // ×ªµ½´íÎóÌáÊ¾Ò³Ãæ
+			request.setAttribute("error", "æ·»åŠ ç®¡ç†å‘˜ä¿¡æ¯å¤±è´¥ï¼"); // å°†é”™è¯¯ä¿¡æ¯ä¿å­˜åˆ°errorå‚æ•°ä¸­
+			return mapping.findForward("error"); // è½¬åˆ°é”™è¯¯æç¤ºé¡µé¢
 		}
 	}
 
-	// ²éÑ¯ĞŞ¸Ä¹ÜÀíÔ±ĞÅÏ¢
+	// æŸ¥è¯¢ä¿®æ”¹ç®¡ç†å‘˜ä¿¡æ¯
 	private ActionForward managerModifyQuery(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 		ManagerForm managerForm = (ManagerForm) form;
-		managerForm.setId(Integer.valueOf(request.getParameter("id")));//»ñÈ¡²¢ÉèÖÃ¹ÜÀíIDºÅ
-		System.out.print("²éÑ¯µ½µÄid:" + request.getParameter("id"));
+		managerForm.setId(Integer.valueOf(request.getParameter("id")));//è·å–å¹¶è®¾ç½®ç®¡ç†IDå·
+		System.out.print("æŸ¥è¯¢åˆ°çš„id:" + request.getParameter("id"));
 		request.setAttribute("managerQueryif", managerDAO
 				.query_update(managerForm));
-		return mapping.findForward("managerQueryModify");			//×ªµ½È¨ÏŞÉèÖÃ³É¹¦Ò³Ãæ
+		return mapping.findForward("managerQueryModify");			//è½¬åˆ°æƒé™è®¾ç½®æˆåŠŸé¡µé¢
 	}
 
-	// ĞŞ¸ÄÃÜÂëÊ±²éÑ¯
+	// ä¿®æ”¹å¯†ç æ—¶æŸ¥è¯¢
 	private ActionForward pwdQuery(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		ManagerForm managerForm = (ManagerForm) form;
 		HttpSession session = request.getSession();
 		String manager = (String) session.getAttribute("manager");
 		managerForm.setName(manager);
-		System.out.print("²éÑ¯µ½µÄmanager:" + manager);
+		System.out.print("æŸ¥è¯¢åˆ°çš„manager:" + manager);
 		request.setAttribute("pwdQueryif", managerDAO.query_pwd(managerForm));
 		return mapping.findForward("pwdQueryModify");
 	}
 
-	// ĞŞ¸Ä¹ÜÀíÔ±ĞÅÏ¢
+	// ä¿®æ”¹ç®¡ç†å‘˜ä¿¡æ¯
 	private ActionForward managerModify(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		ManagerForm managerForm = (ManagerForm) form;
-		managerForm.setId(managerForm.getId());				//»ñÈ¡²¢ÉèÖÃ¹ÜÀíÔ±IDºÅ
-		managerForm.setName(managerForm.getName());			//»ñÈ¡²¢ÉèÖÃ¹ÜÀíÔ±Ãû³Æ
-		managerForm.setPwd(managerForm.getPwd());			//»ñÈ¡²¢ÉèÖÃ¹ÜÀíÔ±ÃÜÂë
-		managerForm.setSysset(managerForm.getSysset());			//»ñÈ¡²¢ÉèÖÃÏµÍ³ÉèÖÃÈ¨ÏŞ
-		managerForm.setReaderset(managerForm.getReaderset());		//»ñÈ¡²¢ÉèÖÃ¶ÁÕß¹ÜÀíÈ¨ÏŞ
-		managerForm.setBookset(managerForm.getBookset());		//»ñÈ¡²¢ÉèÖÃÍ¼Êé¹ÜÀíÈ¨ÏŞ
-		managerForm.setBorrowback(managerForm.getBorrowback());	//»ñÈ¡²¢ÉèÖÃÍ¼Êé½è»¹È¨ÏŞ
-		managerForm.setSysquery(managerForm.getSysquery());		//»ñÈ¡²¢ÉèÖÃÏµÍ³²éÑ¯È¨ÏŞ
-		int ret = managerDAO.update(managerForm);				//µ÷ÓÃÉèÖÃ¹ÜÀíÔ±È¨ÏŞµÄ·½·¨
+		managerForm.setId(managerForm.getId());				//è·å–å¹¶è®¾ç½®ç®¡ç†å‘˜IDå·
+		managerForm.setName(managerForm.getName());			//è·å–å¹¶è®¾ç½®ç®¡ç†å‘˜åç§°
+		managerForm.setPwd(managerForm.getPwd());			//è·å–å¹¶è®¾ç½®ç®¡ç†å‘˜å¯†ç 
+		managerForm.setSysset(managerForm.getSysset());			//è·å–å¹¶è®¾ç½®ç³»ç»Ÿè®¾ç½®æƒé™
+		managerForm.setReaderset(managerForm.getReaderset());		//è·å–å¹¶è®¾ç½®è¯»è€…ç®¡ç†æƒé™
+		managerForm.setBookset(managerForm.getBookset());		//è·å–å¹¶è®¾ç½®å›¾ä¹¦ç®¡ç†æƒé™
+		managerForm.setBorrowback(managerForm.getBorrowback());	//è·å–å¹¶è®¾ç½®å›¾ä¹¦å€Ÿè¿˜æƒé™
+		managerForm.setSysquery(managerForm.getSysquery());		//è·å–å¹¶è®¾ç½®ç³»ç»ŸæŸ¥è¯¢æƒé™
+		int ret = managerDAO.update(managerForm);				//è°ƒç”¨è®¾ç½®ç®¡ç†å‘˜æƒé™çš„æ–¹æ³•
 		if (ret == 0) {
-			request.setAttribute("error", "ÉèÖÃ¹ÜÀíÔ±È¨ÏŞÊ§°Ü£¡");	//±£´æ´íÎóÌáÊ¾ĞÅÏ¢µ½error²ÎÊıÖĞ
-			return mapping.findForward("error");				//×ªµ½´íÎóÌáÊ¾Ò³Ãæ
+			request.setAttribute("error", "è®¾ç½®ç®¡ç†å‘˜æƒé™å¤±è´¥ï¼");	//ä¿å­˜é”™è¯¯æç¤ºä¿¡æ¯åˆ°errorå‚æ•°ä¸­
+			return mapping.findForward("error");				//è½¬åˆ°é”™è¯¯æç¤ºé¡µé¢
 		} else {
-			return mapping.findForward("managerModify");		//×ªµ½È¨ÏŞÉèÖÃ³É¹¦Ò³Ãæ
+			return mapping.findForward("managerModify");		//è½¬åˆ°æƒé™è®¾ç½®æˆåŠŸé¡µé¢
 		}
 	}
 
 
-	// É¾³ı¹ÜÀíÔ±ĞÅÏ¢
+	// åˆ é™¤ç®¡ç†å‘˜ä¿¡æ¯
 	private ActionForward managerDel(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		ManagerForm managerForm = (ManagerForm) form;
-		managerForm.setId(Integer.valueOf(request.getParameter("id")));	//»ñÈ¡²¢ÉèÖÃ¹ÜÀíÔ±IDºÅ
-		int ret = managerDAO.delete(managerForm);		//µ÷ÓÃÉ¾³ıĞÅÏ¢µÄ·½·¨delete()
+		managerForm.setId(Integer.valueOf(request.getParameter("id")));	//è·å–å¹¶è®¾ç½®ç®¡ç†å‘˜IDå·
+		int ret = managerDAO.delete(managerForm);		//è°ƒç”¨åˆ é™¤ä¿¡æ¯çš„æ–¹æ³•delete()
 		if (ret == 0) {
-			request.setAttribute("error", "É¾³ı¹ÜÀíÔ±ĞÅÏ¢Ê§°Ü£¡");	//±£´æ´íÎóÌáÊ¾ĞÅÏ¢µ½error²ÎÊıÖĞ
-			return mapping.findForward("error");	//×ªµ½´íÎóÌáÊ¾Ò³Ãæ
+			request.setAttribute("error", "åˆ é™¤ç®¡ç†å‘˜ä¿¡æ¯å¤±è´¥ï¼");	//ä¿å­˜é”™è¯¯æç¤ºä¿¡æ¯åˆ°errorå‚æ•°ä¸­
+			return mapping.findForward("error");	//è½¬åˆ°é”™è¯¯æç¤ºé¡µé¢
 		} else {
-			return mapping.findForward("managerDel");	//×ªµ½É¾³ı¹ÜÀíÔ±ĞÅÏ¢³É¹¦Ò³Ãæ
+			return mapping.findForward("managerDel");	//è½¬åˆ°åˆ é™¤ç®¡ç†å‘˜ä¿¡æ¯æˆåŠŸé¡µé¢
 		}
 	}
 
-	// ĞŞ¸Ä¹ÜÀíÔ±ÃÜÂë
+	// ä¿®æ”¹ç®¡ç†å‘˜å¯†ç 
 	private ActionForward modifypwd(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		ManagerForm managerForm = (ManagerForm) form;
@@ -154,7 +154,7 @@ public class Manager extends Action {
 		managerForm.setPwd(managerForm.getPwd());
 		int ret = managerDAO.updatePwd(managerForm);
 		if (ret == 0) {
-			request.setAttribute("error", "¸ü¸Ä¿ÚÁîÊ§°Ü£¡");
+			request.setAttribute("error", "æ›´æ”¹å£ä»¤å¤±è´¥ï¼");
 			return mapping.findForward("error");
 		} else {
 			return mapping.findForward("pwdModify");
