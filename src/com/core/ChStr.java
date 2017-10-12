@@ -1,30 +1,28 @@
-package com.core;
 
+package com.core;
 public class ChStr {
 	public static String toChinese(String strvalue) {
 		try {
-			if (strvalue == null) {										//������strvalueΪnullʱ
-				strvalue="";											//������strvalue��ֵΪ��
+			if (strvalue == null) {							//当变量strvalue为null时
+				strvalue="";								//将变量strvalue赋值为空
 			} else {
-				strvalue = new String(strvalue.getBytes("ISO8859_1"), "GBK");	//���ַ���ת��ΪGBK����
-				strvalue = strvalue.trim();								//ȥ���ַ�������β�ո�
+				strvalue = new String(strvalue.getBytes("ISO8859_1"), "GBK");//将字符串转换为GBK编码
+				strvalue = strvalue.trim();						//去除字符串的首尾空格
 			}
 		} catch (Exception e) {
-			strvalue="";												//������strvalue��ֵΪ��
+			strvalue="";									//将变量strvalue赋值为空
 		}
-		return strvalue;												//����ת������������strvalue
+		return strvalue;									//返回转换后的输入变量strvalue
 	}
 
-	// �����ַ����еĿ�ֵ
+	// 处理字符串中的空值
 	public static final String nullToString(String v, String toV) {
-	    if (v == null || "".equals(v)) {			//���������vΪ��ʱ
-	        v = toV;						//���������v��ֵΪ�������toV
+	    if (v == null || "".equals(v)) {		//当输入变量v为空时
+	        v = toV;					//将输入变量v赋值为输入变量toV
 	    }
-	    return v;							//����ת������������v
+	    return v;					//返回转换后的输入变量v
 	}
-	
-	//过滤危险字符
-	//过滤危险字符
+//过滤危险字符
 	public static final String filterStr(String str){
 		str=str.replaceAll(";","");
 		str=str.replaceAll("&","&amp;");
