@@ -3,26 +3,26 @@ package com.core;
 public class ChStr {
 	public static String toChinese(String strvalue) {
 		try {
-			if (strvalue == null) {										//当变量strvalue为null时
-				strvalue="";											//将变量strvalue赋值为空
+			if (strvalue == null) {										//锟斤拷锟斤拷锟斤拷strvalue为null时
+				strvalue="";											//锟斤拷锟斤拷锟斤拷strvalue锟斤拷值为锟斤拷
 			} else {
-				strvalue = new String(strvalue.getBytes("ISO8859_1"), "GBK");	//将字符串转换为GBK编码
-				strvalue = strvalue.trim();								//去除字符串的首尾空格
+				strvalue = new String(strvalue.getBytes("ISO8859_1"), "GBK");	//锟斤拷锟街凤拷锟斤拷转锟斤拷为GBK锟斤拷锟斤拷
+				strvalue = strvalue.trim();								//去锟斤拷锟街凤拷锟斤拷锟斤拷锟斤拷尾锟秸革拷
 			}
 		} catch (Exception e) {
-			strvalue="";												//将变量strvalue赋值为空
+			strvalue="";												//锟斤拷锟斤拷锟斤拷strvalue锟斤拷值为锟斤拷
 		}
-		return strvalue;												//返回转换后的输入变量strvalue
+		return strvalue;												//锟斤拷锟斤拷转锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷strvalue
 	}
 
-	// 处理字符串中的空值
+	// 锟斤拷锟斤拷锟街凤拷锟斤拷锟叫的匡拷值
 	public static final String nullToString(String v, String toV) {
-	    if (v == null || "".equals(v)) {			//当输入变量v为空时
-	        v = toV;						//将输入变量v赋值为输入变量toV
+	    if (v == null || "".equals(v)) {			//锟斤拷锟斤拷锟斤拷锟斤拷锟絭为锟斤拷时
+	        v = toV;						//锟斤拷锟斤拷锟斤拷锟斤拷锟絭锟斤拷值为锟斤拷锟斤拷锟斤拷锟絫oV
 	    }
-	    return v;							//返回转换后的输入变量v
+	    return v;							//锟斤拷锟斤拷转锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷v
 	}
-	//过滤危险字符
+	////杩囨护鍗遍櫓瀛楃
 	public static final String filterStr(String str){
 		str=str.replaceAll(";","");
 		str=str.replaceAll("&","&amp;");
