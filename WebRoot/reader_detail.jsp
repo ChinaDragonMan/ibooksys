@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.dao.ReaderDAO" %>
 <%@ page import="com.dao.ReaderTypeDAO" %>
 <%@ page import="com.actionForm.ReaderForm" %>
@@ -10,15 +10,15 @@ ReaderForm readerForm=(ReaderForm)request.getAttribute("readerDetail");
 <script language="jscript">
 function check(form){
 	if(form.name.value==""){
-		alert("ÇëÊäÈë¶ÁÕßĞÕÃû!");form.name.focus();return false;
+		alert("è¯·è¾“å…¥è¯»è€…å§“å!");form.name.focus();return false;
 	}
 	if(form.paperNO.value==""){
-		alert("ÇëÊäÈëÖ¤¼şºÅÂë!");form.paperNO.focus();return false;
+		alert("è¯·è¾“å…¥è¯ä»¶å·ç !");form.paperNO.focus();return false;
 	}
 }
 </script>
 <head>
-<title>Í¼Êé¹İ¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -30,7 +30,7 @@ function check(form){
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">µ±Ç°Î»ÖÃ£º¶ÁÕß¹ÜÀí &gt; ¶ÁÕßµµ°¸¹ÜÀí &gt; ¶ÁÕßÏêÏ¸ĞÅÏ¢ &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">å½“å‰ä½ç½®ï¼šè¯»è€…ç®¡ç† &gt; è¯»è€…æ¡£æ¡ˆç®¡ç† &gt; è¯»è€…è¯¦ç»†ä¿¡æ¯ &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top"><table width="100%" height="493"  border="0" cellpadding="0" cellspacing="0">
@@ -54,65 +54,65 @@ function check(form){
   %>
 	<table width="600" height="432"  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tr>
-        <td width="173" height="30" align="center">ĞÕ&nbsp;&nbsp;&nbsp;&nbsp;Ãû£º</td>
+        <td width="173" height="30" align="center">å§“&nbsp;&nbsp;&nbsp;&nbsp;åï¼š</td>
         <td width="427" height="39">
           <input name="name" type="text" value="<%=name%>"> </td>
       </tr>
       <tr>
-        <td width="173" height="30" align="center">ĞÔ&nbsp;&nbsp;&nbsp;&nbsp;±ğ£º</td>
+        <td width="173" height="30" align="center">æ€§&nbsp;&nbsp;&nbsp;&nbsp;åˆ«ï¼š</td>
         <td height="35"><input name="name" type="text" value="<%=sex%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">Ìõ&nbsp;ĞÎ&nbsp;Âë£º</td>
+        <td height="30" align="center">æ¡&nbsp;å½¢&nbsp;ç ï¼š</td>
         <td><input name="barcode" type="text" id="barcode" value="<%=barcode%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">¶ÁÕßÀàĞÍ£º</td>
+        <td height="30" align="center">è¯»è€…ç±»å‹ï¼š</td>
         <td><input name="vocation" type="text" id="vocation" value="<%=typename%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">Ö°&nbsp;&nbsp;&nbsp;&nbsp;Òµ£º</td>
+        <td height="30" align="center">èŒ&nbsp;&nbsp;&nbsp;&nbsp;ä¸šï¼š</td>
         <td><input name="vocation" type="text" id="vocation" value="<%=vocation%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">³öÉúÈÕÆÚ£º</td>
+        <td height="30" align="center">å‡ºç”Ÿæ—¥æœŸï¼š</td>
         <td><input name="birthday" type="text" id="birthday" value="<%=birthday%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">ÓĞĞ§Ö¤¼ş£º</td>
+        <td height="30" align="center">æœ‰æ•ˆè¯ä»¶ï¼š</td>
         <td><input name="paperType" type="text" value="<%=paperType%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">Ö¤¼şºÅÂë£º</td>
+        <td height="30" align="center">è¯ä»¶å·ç ï¼š</td>
         <td><input name="paperNO" type="text" id="paperNO" value="<%=paperNO%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">µÇ¼ÇÈÕÆÚ£º</td>
+        <td height="30" align="center">ç™»è®°æ—¥æœŸï¼š</td>
         <td><input name="paperNO2" type="text" id="paperNO2" value="<%=createDate%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">µç&nbsp;&nbsp;&nbsp;&nbsp;»°£º</td>
+        <td height="30" align="center">ç”µ&nbsp;&nbsp;&nbsp;&nbsp;è¯ï¼š</td>
         <td><input name="tel" type="text" id="tel" value="<%=tel%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">Email£º</td>
+        <td height="30" align="center">Emailï¼š</td>
         <td><input name="email" type="text" id="email" value="<%=email%>" size="50">
           </td>
       </tr>
       <tr>
-        <td height="30" align="center">²Ù&nbsp;×÷&nbsp;Ô±£º</td>
+        <td height="30" align="center">æ“&nbsp;ä½œ&nbsp;å‘˜ï¼š</td>
         <td><input name="operator" type="text" id="operator" value="<%=operator%>">
           </td>
       </tr>	  
       <tr>
-        <td align="center">±¸&nbsp;&nbsp;&nbsp;&nbsp;×¢£º</td>
+        <td align="center">å¤‡&nbsp;&nbsp;&nbsp;&nbsp;æ³¨ï¼š</td>
         <td><textarea name="remark" cols="50" rows="5" class="wenbenkuang" id="remark"><%=remark%></textarea></td>
       </tr>
       <tr>
         <td align="center">&nbsp;</td>
         <td>
 &nbsp;
-<input name="Submit2" type="button" class="btn_grey" value="·µ»Ø" onClick="history.back()"></td>
+<input name="Submit2" type="button" class="btn_grey" value="è¿”å›" onClick="history.back()"></td>
       </tr>
     </table>
 	</td>

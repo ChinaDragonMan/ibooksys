@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.actionForm.BookCaseForm" %>
 <%@ page import="com.core.ChStr" %>
 <html>
 <head>
-<title>修改书架信息</title>
-<meta http-equiv="Content-Type" content="text/html" charset="gb2312">
+<title>淇敼涔︽灦淇℃伅</title>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 
@@ -27,16 +27,16 @@ ChStr chStr=new ChStr();
 
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="50" align="center">            书架名称：
+        <td height="50" align="center">            涔︽灦鍚嶇О锛�
             <input name="id" type="hidden" size="50" value="<%=bookCaseForm.getId()%>">
     <input name="name" type="text" value="<%=chStr.toChinese(bookCaseForm.getName())%>"></td>
       </tr>
       <tr>
-        <td height="35" align="center"><input name="Submit" type="submit" class="btn_grey" value="保存">
+        <td height="35" align="center"><input name="Submit" type="submit" class="btn_grey" value="淇濆瓨">
 &nbsp;
-<input name="Submit2" type="reset" class="btn_grey" value="重置">
+<input name="Submit2" type="reset" class="btn_grey" value="閲嶇疆">
 &nbsp;
-<input name="Submit3" type="button" class="btn_grey" onClick="window.close()" value="关闭"></td>
+<input name="Submit3" type="button" class="btn_grey" onClick="window.close()" value="鍏抽棴"></td>
       </tr>
     </table>
           </form></td>

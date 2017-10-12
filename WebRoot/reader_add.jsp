@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.dao.ReaderDAO" %>
 <%@ page import="com.dao.ReaderTypeDAO" %>
 <%@ page import="com.actionForm.ReaderForm" %>
@@ -10,7 +10,7 @@ String str=null;
 ReaderTypeDAO readerTypeDAO=new ReaderTypeDAO();
 Collection coll=(Collection)readerTypeDAO.query(str);
 if(coll==null || coll.isEmpty()){
-	out.println("<script>alert('ÇëÏÈÂ¼Èë¶ÁÕßÀàĞÍĞÅÏ¢!');history.back(-1);</script>");
+	out.println("<script>alert('è¯·å…ˆå½•å…¥è¯»è€…ç±»å‹ä¿¡æ¯!');history.back(-1);</script>");
 }else{
 	  Iterator it=coll.iterator();
 	  int ID=0;
@@ -19,18 +19,18 @@ if(coll==null || coll.isEmpty()){
 <script language="jscript">
 function check(form){
 	if(form.name.value==""){
-		alert("ÇëÊäÈë¶ÁÕßĞÕÃû!");form.name.focus();return false;
+		alert("è¯·è¾“å…¥è¯»è€…å§“å!");form.name.focus();return false;
 	}
 	if(form.barcode.value==""){
-		alert("ÇëÊäÈëÌõĞÎÂë!");form.barcode.focus();return false;
+		alert("è¯·è¾“å…¥æ¡å½¢ç !");form.barcode.focus();return false;
 	}
 	if(form.paperNO.value==""){
-		alert("ÇëÊäÈëÖ¤¼şºÅÂë!");form.paperNO.focus();return false;
+		alert("è¯·è¾“å…¥è¯ä»¶å·ç !");form.paperNO.focus();return false;
 	}
 }
 </script>
 <head>
-<title>Í¼Êé¹İ¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -42,7 +42,7 @@ function check(form){
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">µ±Ç°Î»ÖÃ£º¶ÁÕß¹ÜÀí &gt; ¶ÁÕßµµ°¸¹ÜÀí &gt; Ìí¼Ó¶ÁÕßĞÅÏ¢ &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">å½“å‰ä½ç½®ï¼šè¯»è€…ç®¡ç† &gt; è¯»è€…æ¡£æ¡ˆç®¡ç† &gt; æ·»åŠ è¯»è€…ä¿¡æ¯ &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top"><table width="100%" height="493"  border="0" cellpadding="0" cellspacing="0">
@@ -51,26 +51,26 @@ function check(form){
 	<form name="form1" method="post" action="reader.do?action=readerAdd">
 	<table width="600" height="432"  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tr>
-        <td width="173" align="center">ĞÕÃû£º</td>
+        <td width="173" align="center">å§“åï¼š</td>
         <td width="427" height="39">
           <input name="name" type="text"> 
           *         </td>
       </tr>
       <tr>
-        <td width="173" align="center">ĞÔ±ğ£º</td>
-        <td height="35"><input name="sex" type="radio" class="noborder" id="radiobutton" value="ÄĞ" checked>
-          <label for="radiobutton">ÄĞ </label>
+        <td width="173" align="center">æ€§åˆ«ï¼š</td>
+        <td height="35"><input name="sex" type="radio" class="noborder" id="radiobutton" value="ç”·" checked>
+          <label for="radiobutton">ç”· </label>
           <label>
-          <input name="sex" type="radio" class="noborder" value="Å®">
-          Å®</label></td>
+          <input name="sex" type="radio" class="noborder" value="å¥³">
+          å¥³</label></td>
       </tr>
       <tr>
-        <td align="center">ÌõĞÎÂë£º</td>
+        <td align="center">æ¡å½¢ç ï¼š</td>
         <td><input name="barcode" type="text" id="barcode">
 * </td>
       </tr>
       <tr>
-        <td align="center">¶ÁÕßÀàĞÍ£º</td>
+        <td align="center">è¯»è€…ç±»å‹ï¼š</td>
         <td>
 		<select name="typeid" class="wenbenkuang" id="typeid">
 <%
@@ -85,45 +85,45 @@ function check(form){
         </select>        </td>
       </tr>
       <tr>
-        <td align="center">Ö°Òµ£º</td>
+        <td align="center">èŒä¸šï¼š</td>
         <td><input name="vocation" type="text" id="vocation"></td>
       </tr>
       <tr>
-        <td align="center">³öÉúÈÕÆÚ£º</td>
+        <td align="center">å‡ºç”Ÿæ—¥æœŸï¼š</td>
         <td><input name="birthday" type="text" id="birthday"></td>
       </tr>
       <tr>
-        <td align="center">ÓĞĞ§Ö¤¼ş£º</td>
+        <td align="center">æœ‰æ•ˆè¯ä»¶ï¼š</td>
         <td><select name="paperType" class="wenbenkuang" id="paperType">
-          <option value="Éí·İÖ¤" selected>Éí·İÖ¤</option>
-          <option value="Ñ§ÉúÖ¤">Ñ§ÉúÖ¤</option>
-          <option value="¾ü¹ÙÖ¤">¾ü¹ÙÖ¤</option>
-          <option value="¹¤×÷Ö¤">¹¤×÷Ö¤</option>
+          <option value="èº«ä»½è¯" selected>èº«ä»½è¯</option>
+          <option value="å­¦ç”Ÿè¯">å­¦ç”Ÿè¯</option>
+          <option value="å†›å®˜è¯">å†›å®˜è¯</option>
+          <option value="å·¥ä½œè¯">å·¥ä½œè¯</option>
                         </select></td>
       </tr>
       <tr>
-        <td align="center">Ö¤¼şºÅÂë£º</td>
+        <td align="center">è¯ä»¶å·ç ï¼š</td>
         <td><input name="paperNO" type="text" id="paperNO"> 
           * </td>
       </tr>
       <tr>
-        <td align="center">µç»°£º</td>
+        <td align="center">ç”µè¯ï¼š</td>
         <td><input name="tel" type="text" id="tel"></td>
       </tr>
       <tr>
-        <td align="center">Email£º</td>
+        <td align="center">Emailï¼š</td>
         <td><input name="email" type="text" id="email" size="50">
           <input name="operator" type="hidden" id="operator" value="<%=chStr.toChinese(manager)%>"></td>
       </tr>
       <tr>
-        <td align="center">±¸×¢£º</td>
+        <td align="center">å¤‡æ³¨ï¼š</td>
         <td><textarea name="remark" cols="50" rows="5" class="wenbenkuang" id="remark"></textarea></td>
       </tr>
       <tr>
         <td align="center">&nbsp;</td>
-        <td><input name="Submit" type="submit" class="btn_grey" value="±£´æ" onClick="return check(form1)">
+        <td><input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜" onClick="return check(form1)">
 &nbsp;
-<input name="Submit2" type="button" class="btn_grey" value="·µ»Ø" onClick="history.back()"></td>
+<input name="Submit2" type="button" class="btn_grey" value="è¿”å›" onClick="history.back()"></td>
       </tr>
     </table>
 	</form>

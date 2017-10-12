@@ -1,8 +1,8 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <html>
 <head>
-<title>操作成功!</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>鎿嶄綔鎴愬姛!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body>
@@ -11,7 +11,7 @@ switch(para){
 	case 1:
 	%>
 		<script language="javascript">
-		alert("书架信息添加成功!");
+		alert("涔︽灦淇℃伅娣诲姞鎴愬姛!");
 		//parent.window.location.href="bookCase.do?action=bookCaseQuery";
 		opener.location.reload();
 		window.close();
@@ -20,7 +20,7 @@ switch(para){
 	case 2:
 	%>
 		<script language="javascript">
-		alert("书架信息修改成功!");
+		alert("涔︽灦淇℃伅淇敼鎴愬姛!");
 		opener.location.reload();
 		window.close();
 		</script>		
@@ -28,7 +28,7 @@ switch(para){
 	case 3:
 	%>
 		<script language="javascript">
-		alert("书架信息删除成功!");
+		alert("涔︽灦淇℃伅鍒犻櫎鎴愬姛!");
 		window.location.href="bookCase.do?action=bookCaseQuery";
 		</script>		
 	<%	break;

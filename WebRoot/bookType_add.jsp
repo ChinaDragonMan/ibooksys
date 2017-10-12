@@ -1,17 +1,17 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <html>
 <head>
-<title>Ìí¼ÓÍ¼ÊéÀàĞÍĞÅÏ¢</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>æ·»åŠ å›¾ä¹¦ç±»å‹ä¿¡æ¯</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <script language="jscript">
 function check(form){
 	if(form.typeName.value==""){
-		alert("ÇëÊäÈëÀàĞÍÃû³Æ!");form.typeName.focus();return false;
+		alert("è¯·è¾“å…¥ç±»å‹åç§°!");form.typeName.focus();return false;
 	}
 	if(form.days.value==""){
-		alert("ÇëÊäÈë¿É½èÌìÊı!");form.days.focus();return false;
+		alert("è¯·è¾“å…¥å¯å€Ÿå¤©æ•°!");form.days.focus();return false;
 	}	
 }
 </script>
@@ -31,20 +31,20 @@ function check(form){
             <td align="center">	<form name="form1" method="post" action="bookType.do?action=bookTypeAdd">
 	<table height="100"  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tr>
-        <td width="77" align="center">ÀàĞÍÃû³Æ£º</td>
+        <td width="77" align="center">ç±»å‹åç§°ï¼š</td>
         <td width="198" height="39">
           <input name="typeName" type="text" size="30">        </td>
       </tr>
       <tr>
-        <td width="77" align="center">¿É½èÌìÊı£º</td>
+        <td width="77" align="center">å¯å€Ÿå¤©æ•°ï¼š</td>
         <td height="35"><input name="days" type="text" id="days" size="25">
-          (Ìì)</td>
+          (å¤©)</td>
       </tr>
       <tr>
         <td align="center">&nbsp;</td>
-        <td><input name="Submit" type="submit" class="btn_grey" value="±£´æ" onClick="return check(form1)">
+        <td><input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜" onClick="return check(form1)">
           &nbsp;
-          <input name="Submit2" type="button" class="btn_grey" value="¹Ø±Õ" onClick="window.close();"></td>
+          <input name="Submit2" type="button" class="btn_grey" value="å…³é—­" onClick="window.close();"></td>
       </tr>
     </table>
 	        </form></td>

@@ -1,8 +1,8 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <html>
 <head>
-<title>添加书架信息</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>娣诲姞涔︽灦淇℃伅</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 
@@ -22,13 +22,13 @@
             <td align="center" valign="top"><form name="form1" method="post" action="bookCase.do?action=bookCaseAdd">
                 <table width="100%" height="114"  border="0" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td height="74" align="center">书架名称：
+                    <td height="74" align="center">涔︽灦鍚嶇О锛�
                       <input name="name" type="text"></td>
                     </tr>
                   <tr>
-                    <td align="center"><input name="Submit3" type="submit" class="btn_grey" value="保存">
+                    <td align="center"><input name="Submit3" type="submit" class="btn_grey" value="淇濆瓨">
                       &nbsp;
-                      <input name="Submit22" type="button" class="btn_grey" value="关闭" onClick="window.close();"></td>
+                      <input name="Submit22" type="button" class="btn_grey" value="鍏抽棴" onClick="window.close();"></td>
                     </tr>
                 </table>
             </form></td>

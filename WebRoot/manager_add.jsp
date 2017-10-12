@@ -1,23 +1,23 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <html>
 <head>
-<title>Ìí¼Ó¹ÜÀíÔ±</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>æ·»åŠ ç®¡ç†å‘˜</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <script language="javascript">
 function check(form){
 	if(form.name.value==""){
-		alert("ÇëÊäÈë¹ÜÀíÔ±Ãû³Æ!");form.name.focus();return;
+		alert("è¯·è¾“å…¥ç®¡ç†å‘˜åç§°!");form.name.focus();return;
 	}
 	if(form.pwd.value==""){
-		alert("ÇëÊäÈë¹ÜÀíÔ±ÃÜÂë!");form.pwd.focus();return;
+		alert("è¯·è¾“å…¥ç®¡ç†å‘˜å¯†ç !");form.pwd.focus();return;
 	}
 	if(form.pwd1.value==""){
-		alert("ÇëÈ·ÈÏ¹ÜÀíÔ±ÃÜÂë!");form.pwd1.focus();return;
+		alert("è¯·ç¡®è®¤ç®¡ç†å‘˜å¯†ç !");form.pwd1.focus();return;
 	}		
 	if(form.pwd.value!=form.pwd.value){
-		alert("ÄúÁ½´ÎÊäÈëµÄ¹ÜÀíÔ±ÃÜÂë²»Ò»ÖÂ£¬ÇëÖØĞÂÊäÈë!");form.pwd.focus();return;
+		alert("æ‚¨ä¸¤æ¬¡è¾“å…¥çš„ç®¡ç†å‘˜å¯†ç ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥!");form.pwd.focus();return;
 	}
 	form.submit();
 }
@@ -38,23 +38,23 @@ function check(form){
             <td align="center" valign="top">	<form name="form1" method="post" action="manager.do?action=managerAdd">
 	<table height="123"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td width="83" height="30" align="center">¹ÜÀíÔ±Ãû³Æ£º</td>
+        <td width="83" height="30" align="center">ç®¡ç†å‘˜åç§°ï¼š</td>
         <td width="192">
           <input name="name" type="text">        </td>
       </tr>
       <tr>
-        <td height="28" align="center">¹ÜÀíÔ±ÃÜÂë£º</td>
+        <td height="28" align="center">ç®¡ç†å‘˜å¯†ç ï¼š</td>
         <td><input name="pwd" type="password" id="pwd"></td>
       </tr>
       <tr>
-        <td height="28" align="center">È·ÈÏ &nbsp;ÃÜÂë£º</td>
+        <td height="28" align="center">ç¡®è®¤ &nbsp;å¯†ç ï¼š</td>
         <td><input name="pwd1" type="password" id="pwd1"></td>
       </tr>
       <tr>
         <td height="37" align="center">&nbsp;</td>
-        <td><input name="Button" type="button" class="btn_grey" value="±£´æ" onClick="check(form1)">
+        <td><input name="Button" type="button" class="btn_grey" value="ä¿å­˜" onClick="check(form1)">
 &nbsp;
-<input name="Submit2" type="button" class="btn_grey" value="¹Ø±Õ" onClick="window.close();"></td>
+<input name="Submit2" type="button" class="btn_grey" value="å…³é—­" onClick="window.close();"></td>
       </tr>
     </table>
 	</form></td>

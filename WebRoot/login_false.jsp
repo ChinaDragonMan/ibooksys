@@ -1,12 +1,12 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <html>
 <head>
 <title>Untitled Document</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body>
-登录失败
-<input type="button" value="返回" onClick="window.location.href='login.jsp'">
+鐧诲綍澶辫触
+<input type="button" value="杩斿洖" onClick="window.location.href='login.jsp'">
 </body>
 </html>

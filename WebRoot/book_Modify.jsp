@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.dao.BookDAO" %>
 <%@ page import="com.dao.BookTypeDAO" %>
 <%@ page import="com.actionForm.BookForm" %>
@@ -14,7 +14,7 @@ String str=null;
 BookTypeDAO bookTypeDAO=new BookTypeDAO();
 Collection coll_type=(Collection)bookTypeDAO.query(str);
 if(coll_type==null || coll_type.isEmpty()){
-	out.println("<script>alert('ÇëÏÈÂ¼ÈëÍ¼ÊéÀàĞÍĞÅÏ¢!');history.back(-1);</script>");
+	out.println("<script>alert('è¯·å…ˆå½•å…¥å›¾ä¹¦ç±»å‹ä¿¡æ¯!');history.back(-1);</script>");
 }else{
 	  Iterator it_type=coll_type.iterator();
 	  int typeID=0;
@@ -23,7 +23,7 @@ if(coll_type==null || coll_type.isEmpty()){
 	  String str1=null;
 	  Collection coll_bookcase=(Collection)bookcaseDAO.query(str1);
 	  if(coll_bookcase==null || coll_bookcase.isEmpty()){
-	  	out.println("<script>alert('ÇëÏÈÂ¼ÈëÊé¼ÜĞÅÏ¢!');history.back(-1);</script>");
+	  	out.println("<script>alert('è¯·å…ˆå½•å…¥ä¹¦æ¶ä¿¡æ¯!');history.back(-1);</script>");
 	  }else{
 	  	Iterator it_bookcase=coll_bookcase.iterator();
 	  	int bookcaseID=0;
@@ -32,7 +32,7 @@ if(coll_type==null || coll_type.isEmpty()){
 	  String str2=null;
 	  Collection coll_pub=(Collection)pubDAO.query(str2);
 	  if(coll_pub==null || coll_pub.isEmpty()){
-	  	out.println("<script>alert('ÇëÏÈÂ¼Èë³ö°æÉçĞÅÏ¢!');history.back(-1);</script>");
+	  	out.println("<script>alert('è¯·å…ˆå½•å…¥å‡ºç‰ˆç¤¾ä¿¡æ¯!');history.back(-1);</script>");
 	  }else{	
 	  	Iterator it_pub=coll_pub.iterator();
 	  	String isbn="";
@@ -42,18 +42,18 @@ if(coll_type==null || coll_type.isEmpty()){
 <script language="jscript">
 function check(form){
 	if(form.barcode.value==""){
-		alert("ÇëÊäÈëÌõĞÎÂë!");form.barcode.focus();return false;
+		alert("è¯·è¾“å…¥æ¡å½¢ç !");form.barcode.focus();return false;
 	}
 	if(form.bookName.value==""){
-		alert("ÇëÊäÈëÍ¼ÊéĞÕÃû!");form.bookName.focus();return false;
+		alert("è¯·è¾“å…¥å›¾ä¹¦å§“å!");form.bookName.focus();return false;
 	}
 	if(form.price.value==""){
-		alert("ÇëÊäÈëÍ¼Êé¶¨¼Û!");form.price.focus();return false;
+		alert("è¯·è¾“å…¥å›¾ä¹¦å®šä»·!");form.price.focus();return false;
 	}
 }
 </script>
 <head>
-<title>Í¼Êé¹İ¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -65,7 +65,7 @@ function check(form){
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">µ±Ç°Î»ÖÃ£ºÍ¼Êé¹ÜÀí &gt; Í¼Êéµµ°¸¹ÜÀí &gt; ĞŞ¸ÄÍ¼ÊéĞÅÏ¢ &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">å½“å‰ä½ç½®ï¼šå›¾ä¹¦ç®¡ç† &gt; å›¾ä¹¦æ¡£æ¡ˆç®¡ç† &gt; ä¿®æ”¹å›¾ä¹¦ä¿¡æ¯ &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top"><table width="100%" height="493"  border="0" cellpadding="0" cellspacing="0">
@@ -92,17 +92,17 @@ function check(form){
 	<table width="600" height="432"  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tr>
         <td width="173" align="center"><input name="id" type="hidden" id="id" value="<%=ID%>">
-          Ìõ&nbsp;ĞÎ&nbsp;Âë£º</td>
+          æ¡&nbsp;å½¢&nbsp;ç ï¼š</td>
         <td width="427" height="39">
           <input name="barcode" type="text" id="barcode" value="<%=barcode%>"></td>
       </tr>
       <tr>
-        <td align="center">Í¼ÊéÃû³Æ£º</td>
+        <td align="center">å›¾ä¹¦åç§°ï¼š</td>
         <td height="39"><input name="bookName" type="text" id="bookName" value="<%=bookname%>" size="60">
           * </td>
       </tr>
       <tr>
-        <td align="center">Í¼ÊéÀàĞÍ£º</td>
+        <td align="center">å›¾ä¹¦ç±»å‹ï¼š</td>
         <td>
 		<select name="typeId" class="wenbenkuang" id="typeId">
 <%
@@ -117,15 +117,15 @@ function check(form){
         </select>        </td>
       </tr>
       <tr>
-        <td align="center">×÷Õß£º</td>
+        <td align="center">ä½œè€…ï¼š</td>
         <td><input name="author" type="text" id="author" value="<%=author%>"></td>
       </tr>
       <tr>
-        <td align="center">ÒëÕß£º</td>
+        <td align="center">è¯‘è€…ï¼š</td>
         <td><input name="translator" type="text" id="translator" value="<%=translator%>"></td>
       </tr>
       <tr>
-        <td align="center">³ö°æÉç£º</td>
+        <td align="center">å‡ºç‰ˆç¤¾ï¼š</td>
         <td><select name="isbn" class="wenbenkuang">
 <%
   while(it_pub.hasNext()){
@@ -139,16 +139,16 @@ function check(form){
         </select> </td>
       </tr>
       <tr>
-        <td align="center">¼Û¸ñ£º</td>
+        <td align="center">ä»·æ ¼ï¼š</td>
         <td><input name="price" type="text" id="price" value="<%=price%>"> 
-          (Ôª) * </td>
+          (å…ƒ) * </td>
       </tr>
       <tr>
-        <td align="center">Ò³Âë£º</td>
+        <td align="center">é¡µç ï¼š</td>
         <td><input name="page" type="text" id="page" value="<%=pages%>"></td>
       </tr>
       <tr>
-        <td align="center">Êé¼Ü£º</td>
+        <td align="center">ä¹¦æ¶ï¼š</td>
         <td><select name="bookcaseid" class="wenbenkuang" id="bookcaseid">
 <%
   while(it_bookcase.hasNext()){
@@ -165,9 +165,9 @@ function check(form){
      
       <tr>
         <td align="center">&nbsp;</td>
-        <td><input name="Submit" type="submit" class="btn_grey" value="±£´æ" onClick="return check(form1)">
+        <td><input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜" onClick="return check(form1)">
 &nbsp;
-<input name="Submit2" type="button" class="btn_grey" value="·µ»Ø" onClick="history.back()"></td>
+<input name="Submit2" type="button" class="btn_grey" value="è¿”å›" onClick="history.back()"></td>
       </tr>
     </table>
 	</form>

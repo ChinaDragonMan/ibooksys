@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.actionForm.ParameterForm" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%
@@ -7,7 +7,7 @@ int cost=0;
 int validity=0;
 %>
 <head>
-<title>Í¼Êé¹İ¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -19,7 +19,7 @@ int validity=0;
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">µ±Ç°Î»ÖÃ£ºÏµÍ³ÉèÖÃ &gt; ²ÎÊıÉèÖÃ &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">å½“å‰ä½ç½®ï¼šç³»ç»Ÿè®¾ç½® &gt; å‚æ•°è®¾ç½® &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top">
@@ -35,20 +35,20 @@ int validity=0;
 %>
   <table width="43%"  border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolordark="#D2E3E6" bordercolorlight="#FFFFFF">
   <tr align="center">
-    <td width="24%" align="left" style="padding:5px;">°ìÖ¤·Ñ£º</td>
+    <td width="24%" align="left" style="padding:5px;">åŠè¯è´¹ï¼š</td>
     <td width="76%" align="left">
       <input name="cost" type="text" id="cost" value="<%=cost%>" size="30">
-      (Ôª)    </td>
+      (å…ƒ)    </td>
     <tr>
-    <td align="left" style="padding:5px;">ÓĞĞ§ÆÚÏŞ£º</td>
+    <td align="left" style="padding:5px;">æœ‰æ•ˆæœŸé™ï¼š</td>
     <td align="left"><input name="validity" type="text" id="validity" size="30" value="<%=validity%>" >
-      (ÔÂ)</td>
+      (æœˆ)</td>
     </tr>
     <tr>
       <td height="65" align="left" style="padding:5px;">&nbsp;</td>
-      <td><input name="Submit" type="submit" class="btn_grey" value="±£´æ">
+      <td><input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜">
         &nbsp;
-        <input name="Submit2" type="reset" class="btn_grey" value="È¡Ïû"></td>
+        <input name="Submit2" type="reset" class="btn_grey" value="å–æ¶ˆ"></td>
     </tr>
 </table>
 </form></td>

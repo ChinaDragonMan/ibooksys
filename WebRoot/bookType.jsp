@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.dao.BookTypeDAO" %>
 <%@ page import="com.actionForm.BookTypeForm" %>
 <%@ page import="java.util.*"%>
@@ -7,7 +7,7 @@
 Collection coll=(Collection)request.getAttribute("bookType");
 %>
 <head>
-<title>Í¼Êé¹Ý¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -19,7 +19,7 @@ Collection coll=(Collection)request.getAttribute("bookType");
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">µ±Ç°Î»ÖÃ£ºÍ¼Êé¹ÜÀí &gt; Í¼ÊéÀàÐÍÉèÖÃ &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">å½“å‰ä½ç½®ï¼šå›¾ä¹¦ç®¡ç† &gt; å›¾ä¹¦ç±»åž‹è®¾ç½® &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top"><%
@@ -27,18 +27,18 @@ if(coll==null || coll.isEmpty()){
 %>
           <table width="100%" height="30"  border="0" cellpadding="0" cellspacing="0">
             <tr>
-              <td height="36" align="center">ÔÝÎÞÍ¼ÊéÀàÐÍÐÅÏ¢£¡</td>
+              <td height="36" align="center">æš‚æ— å›¾ä¹¦ç±»åž‹ä¿¡æ¯ï¼</td>
             </tr>
           </table>
           <table width="100%"  border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td>
-      <a href="#" onClick="window.open('bookType_add.jsp','','width=292,height=175')">Ìí¼ÓÍ¼ÊéÀàÐÍÐÅÏ¢</a> </td>
+      <a href="#" onClick="window.open('bookType_add.jsp','','width=292,height=175')">æ·»åŠ å›¾ä¹¦ç±»åž‹ä¿¡æ¯</a> </td>
   </tr>
 </table>
  <%
 }else{
-  //Í¨¹ýµü´ú·½Ê½ÏÔÊ¾Êý¾Ý
+  //é€šè¿‡è¿­ä»£æ–¹å¼æ˜¾ç¤ºæ•°æ®
   Iterator it=coll.iterator();
   int ID=0;
   String typename="";
@@ -48,15 +48,15 @@ if(coll==null || coll.isEmpty()){
   <tr>
     <td width="82%">&nbsp;      </td>
 <td width="18%" align="right">
-      <a href="#" onClick="window.open('bookType_add.jsp','','width=292,height=175')">Ìí¼ÓÍ¼ÊéÀàÐÍÐÅÏ¢</a> </td>	  
+      <a href="#" onClick="window.open('bookType_add.jsp','','width=292,height=175')">æ·»åŠ å›¾ä¹¦ç±»åž‹ä¿¡æ¯</a> </td>	  
   </tr>
 </table>  
   <table width="91%"  border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolordark="#F6B83B" bordercolorlight="#FFFFFF">
   <tr align="center" bgcolor="#e3F4F7">
-    <td width="35%" bgcolor="#F9D16B">Í¼ÊéÀàÐÍÃû³Æ</td>
-    <td width="35%" bgcolor="#F9D16B">¿É½èÌìÊý</td>
-    <td width="16%" bgcolor="#F9D16B">ÐÞ¸Ä</td>
-    <td width="14%" bgcolor="#F9D16B">É¾³ý</td>
+    <td width="35%" bgcolor="#F9D16B">å›¾ä¹¦ç±»åž‹åç§°</td>
+    <td width="35%" bgcolor="#F9D16B">å¯å€Ÿå¤©æ•°</td>
+    <td width="16%" bgcolor="#F9D16B">ä¿®æ”¹</td>
+    <td width="14%" bgcolor="#F9D16B">åˆ é™¤</td>
   </tr>
 <%
   while(it.hasNext()){
@@ -68,8 +68,8 @@ if(coll==null || coll.isEmpty()){
   <tr>
     <td style="padding:5px;"><%=typename%></td>
     <td style="padding:5px;"><%=days%></td>
-    <td align="center"><a href="#" onClick="window.open('bookType.do?action=bookTypeModifyQuery&ID=<%=ID%>','','width=292,height=175')">ÐÞ¸Ä</a></td>
-    <td align="center"><a href="bookType.do?action=bookTypeDel&ID=<%=ID%>">É¾³ý</a></td>
+    <td align="center"><a href="#" onClick="window.open('bookType.do?action=bookTypeModifyQuery&ID=<%=ID%>','','width=292,height=175')">ä¿®æ”¹</a></td>
+    <td align="center"><a href="bookType.do?action=bookTypeDel&ID=<%=ID%>">åˆ é™¤</a></td>
   </tr>
 <%
   }

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.dao.BorrowDAO" %>
 <%@ page import="com.actionForm.BorrowForm" %>
 <%@ page import="java.util.*"%>
@@ -7,7 +7,7 @@
 Collection coll=(Collection)request.getAttribute("bookBorrowSort");
 %>
 <head>
-<title>Í¼Êé¹Ý¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -19,7 +19,7 @@ Collection coll=(Collection)request.getAttribute("bookBorrowSort");
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">µ±Ç°Î»ÖÃ£ºÍ¼Êé½èÔÄÅÅÐÐ°ñ &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">å½“å‰ä½ç½®ï¼šå›¾ä¹¦å€Ÿé˜…æŽ’è¡Œæ¦œ &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top"><%
@@ -27,12 +27,12 @@ if(coll==null || coll.isEmpty()){
 %>
           <table width="100%" height="30"  border="0" cellpadding="0" cellspacing="0">
             <tr>
-              <td height="36" align="center">ÔÝÎÞÍ¼Êé½èÔÄÐÅÏ¢£¡</td>
+              <td height="36" align="center">æš‚æ— å›¾ä¹¦å€Ÿé˜…ä¿¡æ¯ï¼</td>
             </tr>
           </table>
           <%
 }else{
-  //Í¨¹ýµü´ú·½Ê½ÏÔÊ¾Êý¾Ý
+  //é€šè¿‡è¿­ä»£æ–¹å¼æ˜¾ç¤ºæ•°æ®
   Iterator it=coll.iterator();
   int degree=0;
   String bookname="";
@@ -46,14 +46,14 @@ if(coll==null || coll.isEmpty()){
   %>
  <table width="98%"  border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolordark="#F6B83B" bordercolorlight="#FFFFFF">
   <tr align="center" bgcolor="#e3F4F7">
-  <td width="8%" bgcolor="#F9D16B">½èÔÄ´ÎÊý</td>
-    <td width="11%" bgcolor="#F9D16B">Í¼ÊéÌõÐÎÂë</td>
-    <td width="17%" bgcolor="#F9D16B">Í¼ÊéÃû³Æ</td>
-    <td width="15%" bgcolor="#F9D16B">Í¼ÊéÀàÐÍ</td>
-    <td width="16%" bgcolor="#F9D16B">Êé¼Ü</td>
-    <td width="14%" bgcolor="#F9D16B">³ö°æÉç</td>
-    <td width="11%" bgcolor="#F9D16B">×÷Õß</td>
-    <td colspan="2" bgcolor="#F9D16B">¶¨¼Û(Ôª)</td>
+  <td width="8%" bgcolor="#F9D16B">å€Ÿé˜…æ¬¡æ•°</td>
+    <td width="11%" bgcolor="#F9D16B">å›¾ä¹¦æ¡å½¢ç </td>
+    <td width="17%" bgcolor="#F9D16B">å›¾ä¹¦åç§°</td>
+    <td width="15%" bgcolor="#F9D16B">å›¾ä¹¦ç±»åž‹</td>
+    <td width="16%" bgcolor="#F9D16B">ä¹¦æž¶</td>
+    <td width="14%" bgcolor="#F9D16B">å‡ºç‰ˆç¤¾</td>
+    <td width="11%" bgcolor="#F9D16B">ä½œè€…</td>
+    <td colspan="2" bgcolor="#F9D16B">å®šä»·(å…ƒ)</td>
     </tr>
 <%
   while(it.hasNext()){

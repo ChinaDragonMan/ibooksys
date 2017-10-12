@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.dao.ReaderDAO" %>
 <%@ page import="com.actionForm.ReaderForm" %>
 <%@ page import="java.util.*"%>
@@ -7,7 +7,7 @@
 Collection coll=(Collection)request.getAttribute("reader");
 %>
 <head>
-<title>Í¼Êé¹Ý¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -19,7 +19,7 @@ Collection coll=(Collection)request.getAttribute("reader");
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">µ±Ç°Î»ÖÃ£º¶ÁÕß¹ÜÀí &gt; ¶ÁÕßµµ°¸¹ÜÀí &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">å½“å‰ä½ç½®ï¼šè¯»è€…ç®¡ç† &gt; è¯»è€…æ¡£æ¡ˆç®¡ç† &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top"><%
@@ -27,18 +27,18 @@ if(coll==null || coll.isEmpty()){
 %>
           <table width="100%" height="30"  border="0" cellpadding="0" cellspacing="0">
             <tr>
-              <td height="36" align="center">ÔÝÎÞ¶ÁÕßÐÅÏ¢£¡</td>
+              <td height="36" align="center">æš‚æ— è¯»è€…ä¿¡æ¯ï¼</td>
             </tr>
           </table>
           <table width="100%"  border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td>
-      <a href="reader_add.jsp">Ìí¼Ó¶ÁÕßÐÅÏ¢</a> </td>
+      <a href="reader_add.jsp">æ·»åŠ è¯»è€…ä¿¡æ¯</a> </td>
   </tr>
 </table>
  <%
 }else{
-  //Í¨¹ýµü´ú·½Ê½ÏÔÊ¾Êý¾Ý
+  //é€šè¿‡è¿­ä»£æ–¹å¼æ˜¾ç¤ºæ•°æ®
   Iterator it=coll.iterator();
   int ID=0;
   String name="";
@@ -53,20 +53,20 @@ if(coll==null || coll.isEmpty()){
   <tr>
     <td width="87%">&nbsp;      </td>
 <td width="13%">
-      <a href="reader_add.jsp">Ìí¼Ó¶ÁÕßÐÅÏ¢</a></td>	  
+      <a href="reader_add.jsp">æ·»åŠ è¯»è€…ä¿¡æ¯</a></td>	  
   </tr>
 </table>  
   <table width="95%"  border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolordark="#F6B83B" bordercolorlight="#FFFFFF">
   <tr align="center" bgcolor="#e3F4F7">
-    <td width="13%" bgcolor="#F9D16B">ÌõÐÎÂë</td>  
-    <td width="10%" bgcolor="#F9D16B">ÐÕÃû</td>
-    <td width="8%" bgcolor="#F9D16B">¶ÁÕßÀàÐÍ</td>
-    <td width="12%" bgcolor="#F9D16B">Ö¤¼þÀàÐÍ</td>
-    <td width="20%" bgcolor="#F9D16B">Ö¤¼þºÅÂë</td>
-    <td width="12%" bgcolor="#F9D16B">µç»°</td>
+    <td width="13%" bgcolor="#F9D16B">æ¡å½¢ç </td>  
+    <td width="10%" bgcolor="#F9D16B">å§“å</td>
+    <td width="8%" bgcolor="#F9D16B">è¯»è€…ç±»åž‹</td>
+    <td width="12%" bgcolor="#F9D16B">è¯ä»¶ç±»åž‹</td>
+    <td width="20%" bgcolor="#F9D16B">è¯ä»¶å·ç </td>
+    <td width="12%" bgcolor="#F9D16B">ç”µè¯</td>
     <td width="15%" bgcolor="#F9D16B">Email</td>
-    <td width="5%" bgcolor="#F9D16B">ÐÞ¸Ä</td>
-    <td width="5%" bgcolor="#F9D16B">É¾³ý</td>
+    <td width="5%" bgcolor="#F9D16B">ä¿®æ”¹</td>
+    <td width="5%" bgcolor="#F9D16B">åˆ é™¤</td>
   </tr>
 <%
   while(it.hasNext()){
@@ -88,8 +88,8 @@ if(coll==null || coll.isEmpty()){
     <td align="center"><%=paperNO%></td>
     <td align="center"><%=tel%></td>
     <td align="center"><%=email%></td>
-    <td align="center"><a href="reader.do?action=readerModifyQuery&ID=<%=ID%>">ÐÞ¸Ä</a></td>
-    <td align="center"><a href="reader.do?action=readerDel&ID=<%=ID%>">É¾³ý</a></td>
+    <td align="center"><a href="reader.do?action=readerModifyQuery&ID=<%=ID%>">ä¿®æ”¹</a></td>
+    <td align="center"><a href="reader.do?action=readerDel&ID=<%=ID%>">åˆ é™¤</a></td>
   </tr>
 <%
   }

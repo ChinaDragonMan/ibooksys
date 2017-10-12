@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.actionForm.ReaderTypeForm" %>
 <%@ page import="com.core.ChStr"%>
 <html>
 <head>
-<title>ÐÞ¸Ä¶ÁÕßÀàÐÍÐÅÏ¢</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>ä¿®æ”¹è¯»è€…ç±»åž‹ä¿¡æ¯</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="CSS/style.css">
 </head>
 
@@ -29,22 +29,22 @@ ChStr chStr=new ChStr();
  <input name="id" type="hidden" size="50" value="<%=readerTypeForm.getId()%>"> 
   <table width="100%" height="111" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="28%" align="center">ÀàÐÍÃû³Æ£º      </td>
+    <td width="28%" align="center">ç±»åž‹åç§°ï¼š      </td>
     <td width="72%"><input name="name" type="text" size="28" value="<%=chStr.toChinese(readerTypeForm.getName())%>">
       </td>
   </tr>
   <tr>
-    <td align="center">¿É½èÊýÁ¿£º</td>
+    <td align="center">å¯å€Ÿæ•°é‡ï¼š</td>
     <td><input name="number" type="text" size="25" value="<%=readerTypeForm.getNumber()%>">
-      (±¾)</td>
+      (æœ¬)</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td><input name="Submit" type="submit" class="btn_grey" value="±£´æ">
+    <td><input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜">
 &nbsp;
-<input name="Submit2" type="reset" class="btn_grey" value="ÖØÖÃ">
+<input name="Submit2" type="reset" class="btn_grey" value="é‡ç½®">
 &nbsp;
-<input name="Submit3" type="button" class="btn_grey" onClick="window.close()" value="¹Ø±Õ"></td>
+<input name="Submit3" type="button" class="btn_grey" onClick="window.close()" value="å…³é—­"></td>
   </tr>
 </table>
 </form></td>

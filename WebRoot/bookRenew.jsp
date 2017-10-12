@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.dao.BorrowDAO" %>
 <%@ page import="com.actionForm.BorrowForm" %>
 <%@ page import="com.actionForm.ReaderForm" %>
@@ -9,12 +9,12 @@ ReaderForm readerForm=(ReaderForm)request.getAttribute("readerinfo");
 Collection coll=(Collection)request.getAttribute("borrowinfo");
 %>
 <head>
-<title>Í¼Êé¹İ¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 	<script language="javascript">
 		function checkreader(form){
 			if(form.barcode.value==""){
-				alert("ÇëÊäÈë¶ÁÕßÌõĞÎÂë!");form.barcode.focus();return;
+				alert("è¯·è¾“å…¥è¯»è€…æ¡å½¢ç !");form.barcode.focus();return;
 			}
 			form.submit();
 		}
@@ -27,7 +27,7 @@ Collection coll=(Collection)request.getAttribute("borrowinfo");
   <tr>
     <td valign="top" bgcolor="#FFFFFF"><table width="100%" height="509"  border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" class="tableBorder_gray">
   <tr>
-    <td height="27" valign="top" style="padding:5px;" class="word_orange">&nbsp;µ±Ç°Î»ÖÃ£ºÍ¼Êé½è»¹ &gt; Í¼ÊéĞø½è &gt;&gt;&gt;</td>
+    <td height="27" valign="top" style="padding:5px;" class="word_orange">&nbsp;å½“å‰ä½ç½®ï¼šå›¾ä¹¦å€Ÿè¿˜ &gt; å›¾ä¹¦ç»­å€Ÿ &gt;&gt;&gt;</td>
   </tr>
   <tr>
     <td align="center" valign="top" style="padding:5px;"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
@@ -66,10 +66,10 @@ if(readerForm!=null){
                     <td><table width="90%" height="21" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                           <td width="24%" height="18" style="padding-left:7px;padding-top:7px;"><img src="Images/reader_checkbg.jpg" width="142" height="18"></td>
-                          <td width="76%" style="padding-top:7px;">¶ÁÕßÌõĞÎÂë£º
+                          <td width="76%" style="padding-top:7px;">è¯»è€…æ¡å½¢ç ï¼š
                             <input name="barcode" type="text" id="barcode" value="<%=barcode%>" size="24">
                             &nbsp;
-                            <input name="Button" type="button" class="btn_grey" value="È·¶¨" onClick="checkreader(form1)"></td>
+                            <input name="Button" type="button" class="btn_grey" value="ç¡®å®š" onClick="checkreader(form1)"></td>
                         </tr>
                     </table></td>
                   </tr>
@@ -79,21 +79,21 @@ if(readerForm!=null){
                   <tr>
                     <td align="center"><table width="96%" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                          <td height="27">ĞÕ&nbsp;&nbsp;&nbsp;&nbsp;Ãû£º
+                          <td height="27">å§“&nbsp;&nbsp;&nbsp;&nbsp;åï¼š
                             <input name="readername" type="text" id="readername" value="<%=name%>"></td>
-                          <td>ĞÔ&nbsp;&nbsp;&nbsp;&nbsp;±ğ£º
+                          <td>æ€§&nbsp;&nbsp;&nbsp;&nbsp;åˆ«ï¼š
                             <input name="sex" type="text" id="sex" value="<%=sex%>"></td>
-                          <td>¶ÁÕßÀàĞÍ£º
+                          <td>è¯»è€…ç±»å‹ï¼š
                             <input name="readerType" type="text" id="readerType" value="<%=typename%>"></td>
                         </tr>
                         <tr>
-                          <td height="27">Ö¤¼şÀàĞÍ£º
+                          <td height="27">è¯ä»¶ç±»å‹ï¼š
                             <input name="paperType" type="text" id="paperType" value="<%=paperType%>"></td>
-                          <td>Ö¤¼şºÅÂë£º
+                          <td>è¯ä»¶å·ç ï¼š
                             <input name="paperNo" type="text" id="paperNo" value="<%=paperNO%>"></td>
-                          <td>¿É½èÊıÁ¿£º
+                          <td>å¯å€Ÿæ•°é‡ï¼š
                             <input name="number" type="text" id="number" value="<%=number%>" size="17">
-                            ²á
+                            å†Œ
                             &nbsp;</td>
                         </tr>
                     </table></td>
@@ -104,13 +104,13 @@ if(readerForm!=null){
           <tr>
             <td valign="top"><table width="100%" height="35" border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#F6B83B" bgcolor="#FFFFFF">
                 <tr align="center" bgcolor="#e3F4F7">
-                  <td width="24%" height="25" bgcolor="#FFF9D9">Í¼ÊéÃû³Æ</td>
-                  <td width="12%" bgcolor="#FFF9D9">½èÔÄÊ±¼ä</td>
-                  <td width="13%" bgcolor="#FFF9D9">Ó¦»¹Ê±¼ä</td>
-                  <td width="14%" bgcolor="#FFF9D9">³ö°æÉç</td>
-                  <td width="12%" bgcolor="#FFF9D9">Êé¼Ü</td>
-                  <td bgcolor="#FFF9D9">¶¨¼Û(Ôª)</td>
-                  <td width="12%" bgcolor="#FFF9D9"><input name="Button22" type="button" class="btn_grey" value="Íê³ÉĞø½è" onClick="window.location.href='bookRenew.jsp'"></td>
+                  <td width="24%" height="25" bgcolor="#FFF9D9">å›¾ä¹¦åç§°</td>
+                  <td width="12%" bgcolor="#FFF9D9">å€Ÿé˜…æ—¶é—´</td>
+                  <td width="13%" bgcolor="#FFF9D9">åº”è¿˜æ—¶é—´</td>
+                  <td width="14%" bgcolor="#FFF9D9">å‡ºç‰ˆç¤¾</td>
+                  <td width="12%" bgcolor="#FFF9D9">ä¹¦æ¶</td>
+                  <td bgcolor="#FFF9D9">å®šä»·(å…ƒ)</td>
+                  <td width="12%" bgcolor="#FFF9D9"><input name="Button22" type="button" class="btn_grey" value="å®Œæˆç»­å€Ÿ" onClick="window.location.href='bookRenew.jsp'"></td>
                 </tr>
 <%
 int id=0;
@@ -139,7 +139,7 @@ if(coll!=null && !coll.isEmpty()){
                      <td align="center">&nbsp;<%=pubname%></td>
                      <td align="center">&nbsp;<%=bookcase%></td>
                      <td width="13%" align="center">&nbsp;<%=price%></td>
-                     <td width="12%" align="center"><a href="borrow.do?action=bookrenew&barcode=<%=barcode%>&id=<%=id%>">Ğø½è</a>&nbsp;</td>
+                     <td width="12%" align="center"><a href="borrow.do?action=bookrenew&barcode=<%=barcode%>&id=<%=id%>">ç»­å€Ÿ</a>&nbsp;</td>
                    </tr>
                 <%	}
 }%>

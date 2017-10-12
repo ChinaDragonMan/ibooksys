@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.actionForm.ManagerForm"%>
 <%@ page import="com.core.ChStr"%>
 <%
@@ -14,8 +14,8 @@ int sysquery=managerForm.getSysquery();
 %>
 <html>
 <head>
-<title>权限设置</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>鏉冮檺璁剧疆</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body>
@@ -34,37 +34,37 @@ int sysquery=managerForm.getSysquery();
             <td align="center" valign="top">	<form name="form1" method="post" action="manager.do?action=managerModify">
 	<table height="126"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td width="85" height="29" align="center">管理员名称：		</td>
+        <td width="85" height="29" align="center">绠＄悊鍛樺悕绉帮細		</td>
         <td width="190">
           <input name="id" type="hidden" value="<%=ID%>"><input name="name" type="text" readonly="yes" value="<%=name%>">        </td>
       </tr>
       <tr>
-        <td height="74" align="center">拥有的权限：</td>
+        <td height="74" align="center">鎷ユ湁鐨勬潈闄愶細</td>
         <td><table width="100%" height="67" border="0" cellpadding="0" cellspacing="0">
           <tr>
             <td width="47%"><input name="sysset" type="checkbox" class="noborder" id="sysset" value="1" <%if(sysset==1){out.println("checked");}%>>
-系统设置</td>
+绯荤粺璁剧疆</td>
             <td width="53%"><input name="readerset" type="checkbox" class="noborder" id="readerset" value="1" <%if(readerset==1){out.println("checked");}%>>
-              读者管理</td>
+              璇昏�呯鐞�</td>
           </tr>
           <tr>
             <td><input name="bookset" type="checkbox" class="noborder" id="bookset" value="1" <%if(bookset==1){out.println("checked");}%>>
-              图书管理</td>
+              鍥句功绠＄悊</td>
             <td><input name="borrowback" type="checkbox" class="noborder" id="borrowback" value="1" <%if(borrowback==1){out.println("checked");}%>>
-              图书借还</td>
+              鍥句功鍊熻繕</td>
           </tr>
           <tr>
             <td height="23"><input name="sysquery" type="checkbox" class="noborder" id="sysquery" value="1" <%if(sysquery==1){out.println("checked");}%>>
-              系统查询</td>
+              绯荤粺鏌ヨ</td>
             <td>&nbsp;</td>
           </tr>
         </table>          </td>
       </tr>
       <tr>
         <td height="22" align="center">&nbsp;</td>
-        <td><input name="Button" type="submit" class="btn_grey" value="保存">
+        <td><input name="Button" type="submit" class="btn_grey" value="淇濆瓨">
 &nbsp;
-<input name="Submit2" type="button" class="btn_grey" value="关闭" onClick="window.close();"></td>
+<input name="Submit2" type="button" class="btn_grey" value="鍏抽棴" onClick="window.close();"></td>
       </tr>
     </table>
 	</form></td>

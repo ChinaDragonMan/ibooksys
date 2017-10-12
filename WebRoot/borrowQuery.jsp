@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.dao.BorrowDAO" %>
 <%@ page import="com.actionForm.BorrowForm" %>
 <%@ page import="java.util.*"%>
@@ -7,26 +7,26 @@
 Collection coll=(Collection)request.getAttribute("borrowQuery");
 %>
 <head>
-<title>Í¼Êé¹İ¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 <script src="JS/function.js"></script>
 <script language="javascript">
 function check(myform){
 	if(myform.flag[0].checked==false && myform.flag[1].checked==false){
-		alert("ÇëÑ¡Ôñ²éÑ¯·½Ê½!");return false;
+		alert("è¯·é€‰æ‹©æŸ¥è¯¢æ–¹å¼!");return false;
 	}
 	if (myform.flag[1].checked){
 		if(myform.sdate.value==""){
-			alert("ÇëÊäÈë¿ªÊ¼ÈÕÆÚ");myform.sdate.focus();return false;
+			alert("è¯·è¾“å…¥å¼€å§‹æ—¥æœŸ");myform.sdate.focus();return false;
 		}		
 		if(CheckDate(myform.sdate.value)){
-			alert("ÄúÊäÈëµÄ¿ªÊ¼ÈÕÆÚ²»ÕıÈ·£¨Èç£º2006-07-05£©\n Çë×¢ÒâÈòÄê!");myform.sDate.focus();return false;
+			alert("æ‚¨è¾“å…¥çš„å¼€å§‹æ—¥æœŸä¸æ­£ç¡®ï¼ˆå¦‚ï¼š2006-07-05ï¼‰\n è¯·æ³¨æ„é—°å¹´!");myform.sDate.focus();return false;
 		}
 		if(myform.edate.value==""){
-			alert("ÇëÊäÈë½áÊøÈÕÆÚ");myform.edate.focus();return false;
+			alert("è¯·è¾“å…¥ç»“æŸæ—¥æœŸ");myform.edate.focus();return false;
 		}		
 		if(CheckDate(myform.edate.value)){
-			alert("ÄúÊäÈëµÄ½áÊøÈÕÆÚ²»ÕıÈ·£¨Èç£º2006-07-05£©\n Çë×¢ÒâÈòÄê!");myform.edate.focus();return false;
+			alert("æ‚¨è¾“å…¥çš„ç»“æŸæ—¥æœŸä¸æ­£ç¡®ï¼ˆå¦‚ï¼š2006-07-05ï¼‰\n è¯·æ³¨æ„é—°å¹´!");myform.edate.focus();return false;
 		}
 	}
 }
@@ -41,7 +41,7 @@ function check(myform){
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">µ±Ç°Î»ÖÃ£ºÏµÍ³²éÑ¯ &gt; Í¼Êé½èÔÄ²éÑ¯ &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">å½“å‰ä½ç½®ï¼šç³»ç»ŸæŸ¥è¯¢ &gt; å›¾ä¹¦å€Ÿé˜…æŸ¥è¯¢ &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top">
@@ -50,24 +50,24 @@ function check(myform){
             <tr>
               <td rowspan="2" align="center" bgcolor="#F9D16B">&nbsp;<img src="Images/search.gif" width="45" height="28"></td>
               <td height="29" bgcolor="#F9D16B"><input name="flag" type="checkbox" class="noborder" value="a" checked>
-                ÇëÑ¡Ôñ²éÑ¯ÒÀ¾İ£º
+                è¯·é€‰æ‹©æŸ¥è¯¢ä¾æ®ï¼š
                 <select name="f" class="wenbenkuang" id="f">
-                  <option value="barcode">Í¼ÊéÌõĞÎÂë</option>
-                  <option value="bookname">Í¼ÊéÃû³Æ</option>
-                  <option value="readerbarcode">¶ÁÕßÌõĞÎÂë</option>
-                  <option value="readername">¶ÁÕßÃû³Æ</option>
+                  <option value="barcode">å›¾ä¹¦æ¡å½¢ç </option>
+                  <option value="bookname">å›¾ä¹¦åç§°</option>
+                  <option value="readerbarcode">è¯»è€…æ¡å½¢ç </option>
+                  <option value="readername">è¯»è€…åç§°</option>
                   </select>
                   <input name="key" type="text" id="key" size="50">
-                  <input name="Submit" type="submit" class="btn_grey" value="²éÑ¯" onClick="return check(myform)"></td>
+                  <input name="Submit" type="submit" class="btn_grey" value="æŸ¥è¯¢" onClick="return check(myform)"></td>
             </tr>
             <tr>
               <td height="26" bgcolor="#F9D16B">
                 <input name="flag" type="checkbox" class="noborder" value="b">
-                ½èÔÄÊ±¼ä£º                ´Ó
+                å€Ÿé˜…æ—¶é—´ï¼š                ä»
                 <input name="sdate" type="text" id="sdate">
-                µ½
+                åˆ°
                 <input name="edate" type="text" id="edate">
-                (ÈÕÆÚ¸ñÊ½Îª£º2006-07-05)</td>
+                (æ—¥æœŸæ ¼å¼ä¸ºï¼š2006-07-05)</td>
             </tr>
           </table>		
 		</form>
@@ -76,12 +76,12 @@ if(coll==null || coll.isEmpty()){
 %>
           <table width="100%" height="30"  border="0" cellpadding="0" cellspacing="0">
             <tr>
-              <td height="36" align="center">ÔİÎŞÍ¼Êé½èÔÄĞÅÏ¢£¡</td>
+              <td height="36" align="center">æš‚æ— å›¾ä¹¦å€Ÿé˜…ä¿¡æ¯ï¼</td>
             </tr>
           </table>
           <%
 }else{
-  //Í¨¹ıµü´ú·½Ê½ÏÔÊ¾Êı¾İ
+  //é€šè¿‡è¿­ä»£æ–¹å¼æ˜¾ç¤ºæ•°æ®
   Iterator it=coll.iterator();
   String bookname="";
   String bookbarcode="";
@@ -94,13 +94,13 @@ if(coll==null || coll.isEmpty()){
   %>
           <table width="98%"  border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolordark="#F6B83B" bordercolorlight="#FFFFFF">
   <tr align="center" bgcolor="#e3F4F7">
-    <td width="11%" bgcolor="#F9D16B">Í¼ÊéÌõĞÎÂë</td>
-    <td width="29%" bgcolor="#F9D16B">Í¼ÊéÃû³Æ</td>
-    <td width="15%" bgcolor="#F9D16B">¶ÁÕßÌõĞÎÂë</td>
-    <td width="13%" bgcolor="#F9D16B">¶ÁÕßÃû³Æ</td>
-    <td width="12%" bgcolor="#F9D16B">½èÔÄÊ±¼ä</td>
-    <td width="12%" bgcolor="#F9D16B">Ó¦»¹Ê±¼ä</td>
-    <td width="8%" bgcolor="#F9D16B">ÊÇ·ñ¹é»¹</td>
+    <td width="11%" bgcolor="#F9D16B">å›¾ä¹¦æ¡å½¢ç </td>
+    <td width="29%" bgcolor="#F9D16B">å›¾ä¹¦åç§°</td>
+    <td width="15%" bgcolor="#F9D16B">è¯»è€…æ¡å½¢ç </td>
+    <td width="13%" bgcolor="#F9D16B">è¯»è€…åç§°</td>
+    <td width="12%" bgcolor="#F9D16B">å€Ÿé˜…æ—¶é—´</td>
+    <td width="12%" bgcolor="#F9D16B">åº”è¿˜æ—¶é—´</td>
+    <td width="8%" bgcolor="#F9D16B">æ˜¯å¦å½’è¿˜</td>
   </tr>
 <%
   while(it.hasNext()){
@@ -113,9 +113,9 @@ if(coll==null || coll.isEmpty()){
 	backTime=borrowForm.getBackTime();
 	ifback=borrowForm.getIfBack();
 	if(ifback==0){
-		ifbackstr="Î´¹é»¹";
+		ifbackstr="æœªå½’è¿˜";
 	}else{
-		ifbackstr="ÒÑ¹é»¹";
+		ifbackstr="å·²å½’è¿˜";
 	}
 	%>
   <tr>

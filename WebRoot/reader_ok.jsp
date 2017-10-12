@@ -1,8 +1,8 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <html>
 <head>
-<title>²Ù×÷³É¹¦!</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>æ“ä½œæˆåŠŸ!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body>
@@ -11,21 +11,21 @@ switch(para){
 	case 1:
 	%>
 		<script language="javascript">
-		alert("¶ÁÕßĞÅÏ¢Ìí¼Ó³É¹¦!");
+		alert("è¯»è€…ä¿¡æ¯æ·»åŠ æˆåŠŸ!");
 		window.location.href="reader.do?action=readerQuery";
 		</script>	
 	<%	break;
 	case 2:
 	%>
 		<script language="javascript">
-		alert("¶ÁÕßĞÅÏ¢ĞŞ¸Ä³É¹¦!");
+		alert("è¯»è€…ä¿¡æ¯ä¿®æ”¹æˆåŠŸ!");
 		window.location.href="reader.do?action=readerQuery";
 		</script>		
 	<%	break;
 	case 3:
 	%>
 		<script language="javascript">
-		alert("¶ÁÕßĞÅÏ¢É¾³ı³É¹¦!");
+		alert("è¯»è€…ä¿¡æ¯åˆ é™¤æˆåŠŸ!");
 		window.location.href="reader.do?action=readerQuery";
 		</script>		
 	<%	break;

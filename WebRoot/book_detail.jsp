@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.dao.BookDAO" %>
 <%@ page import="com.dao.BookTypeDAO" %>
 <%@ page import="com.actionForm.BookForm" %>
@@ -8,7 +8,7 @@
 BookForm bookForm=(BookForm)request.getAttribute("bookDetail");
 %>
 <head>
-<title>Í¼Êé¹İ¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -20,7 +20,7 @@ BookForm bookForm=(BookForm)request.getAttribute("bookDetail");
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">µ±Ç°Î»ÖÃ£ºÍ¼Êé¹ÜÀí &gt; Í¼Êéµµ°¸¹ÜÀí &gt; Í¼ÊéÏêÏ¸ĞÅÏ¢ &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">å½“å‰ä½ç½®ï¼šå›¾ä¹¦ç®¡ç† &gt; å›¾ä¹¦æ¡£æ¡ˆç®¡ç† &gt; å›¾ä¹¦è¯¦ç»†ä¿¡æ¯ &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top"><table width="100%" height="493"  border="0" cellpadding="0" cellspacing="0">
@@ -44,57 +44,57 @@ BookForm bookForm=(BookForm)request.getAttribute("bookDetail");
   %>
 	<table width="600" height="432"  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tr>
-        <td width="173" height="30" align="center">Ìõ&nbsp;ĞÎ&nbsp;Âë£º</td>
+        <td width="173" height="30" align="center">æ¡&nbsp;å½¢&nbsp;ç ï¼š</td>
         <td height="35"><input name="name" type="text" value="<%=barcode%>" size="40"></td>
       </tr>
       <tr>
-        <td width="173" height="30" align="center">Í¼ÊéÃû³Æ£º</td>
+        <td width="173" height="30" align="center">å›¾ä¹¦åç§°ï¼š</td>
         <td width="427" height="39">
           <input name="name" type="text" value="<%=bookname%>" size="60"> </td>
       </tr>
       <tr>
-        <td height="30" align="center">Í¼ÊéÀàĞÍ£º</td>
+        <td height="30" align="center">å›¾ä¹¦ç±»å‹ï¼š</td>
         <td><input name="vocation" type="text" id="vocation" value="<%=typename%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">×÷&nbsp;&nbsp;&nbsp;&nbsp;Õß£º</td>
+        <td height="30" align="center">ä½œ&nbsp;&nbsp;&nbsp;&nbsp;è€…ï¼š</td>
         <td><input name="vocation" type="text" id="vocation" value="<%=author%>" size="50"></td>
       </tr>
       <tr>
-        <td height="30" align="center">Òë&nbsp;&nbsp;&nbsp;&nbsp;Õß£º</td>
+        <td height="30" align="center">è¯‘&nbsp;&nbsp;&nbsp;&nbsp;è€…ï¼š</td>
         <td><input name="birthday" type="text" id="birthday" value="<%=translator%>" size="50"></td>
       </tr>
       <tr>
-        <td height="30" align="center">³ö&nbsp;°æ&nbsp;Éç£º</td>
+        <td height="30" align="center">å‡º&nbsp;ç‰ˆ&nbsp;ç¤¾ï¼š</td>
         <td><input name="paperType" type="text" value="<%=publishing%>" size="40"></td>
       </tr>
       <tr>
-        <td height="30" align="center">¼Û&nbsp;&nbsp;&nbsp;&nbsp;¸ñ£º</td>
+        <td height="30" align="center">ä»·&nbsp;&nbsp;&nbsp;&nbsp;æ ¼ï¼š</td>
         <td><input name="paperNO" type="text" id="paperNO" value="<%=price%>">
-          (Ôª)</td>
+          (å…ƒ)</td>
       </tr>
       <tr>
-        <td height="30" align="center">Ò³&nbsp;&nbsp;&nbsp;&nbsp;Âë£º</td>
+        <td height="30" align="center">é¡µ&nbsp;&nbsp;&nbsp;&nbsp;ç ï¼š</td>
         <td><input name="paperNO2" type="text" id="paperNO2" value="<%=pages%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">Êé&nbsp;&nbsp;&nbsp;&nbsp;¼Ü£º</td>
+        <td height="30" align="center">ä¹¦&nbsp;&nbsp;&nbsp;&nbsp;æ¶ï¼š</td>
         <td><input name="tel" type="text" id="tel" value="<%=bookcase%>"></td>
       </tr>
 
       <tr>
-        <td height="30" align="center">Èë¿âÊ±¼ä£º</td>
+        <td height="30" align="center">å…¥åº“æ—¶é—´ï¼š</td>
         <td><input name="email" type="text" id="email" value="<%=inTime%>">        </td>
       </tr>
       <tr>
-        <td height="30" align="center">²Ù&nbsp;×÷&nbsp;Ô±£º</td>
+        <td height="30" align="center">æ“&nbsp;ä½œ&nbsp;å‘˜ï¼š</td>
         <td><input name="operator" type="text" id="operator" value="<%=operator%>">          </td>
       </tr>
       <tr>
         <td align="center">&nbsp;</td>
         <td>
 &nbsp;
-<input name="Submit2" type="button" class="btn_grey" value="·µ»Ø" onClick="history.back()"></td>
+<input name="Submit2" type="button" class="btn_grey" value="è¿”å›" onClick="history.back()"></td>
       </tr>
     </table>
 	</td>

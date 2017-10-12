@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 
 <%@ page import="java.util.*"%>
 
@@ -7,7 +7,7 @@
 Collection coll=(Collection)request.getAttribute("managerQuery");
 %>
 <head>
-<title>ͼ��ݹ���ϵͳ</title>
+<title>图书馆管理系统</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -19,7 +19,7 @@ Collection coll=(Collection)request.getAttribute("managerQuery");
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">��ǰλ�ã�ϵͳ���� &gt; ����Ա���� &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">当前位置：系统设置 &gt; 管理员设置 &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top"><%
@@ -27,18 +27,18 @@ if(coll==null || coll.isEmpty()){
 %>
           <table width="100%" height="30"  border="0" cellpadding="0" cellspacing="0">
             <tr>
-              <td height="36" align="center">���޹���Ա��Ϣ��</td>
+              <td height="36" align="center">暂无管理员信息！</td>
             </tr>
           </table>
           <table width="100%"  border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td>
-      <a href="#" onClick="window.open('manager_add.jsp','','width=292,height=175')">���ӹ���Ա��Ϣ</a> </td>
+      <a href="#" onClick="window.open('manager_add.jsp','','width=292,height=175')">添加管理员信息</a> </td>
   </tr>
 </table>
  <%
 }else{
-  //ͨ��������ʽ��ʾ����
+  //通过迭代方式显示数据
   Iterator it=coll.iterator();
   int ID=0;
   String name="";
@@ -52,19 +52,19 @@ if(coll==null || coll.isEmpty()){
   <tr>
     <td width="84%">&nbsp;      </td>
 <td width="16%">
-      <a href="#" onClick="window.open('manager_add.jsp','','width=292,height=175')">���ӹ���Ա��Ϣ</a> </td>	  
+      <a href="#" onClick="window.open('manager_add.jsp','','width=292,height=175')">添加管理员信息</a> </td>	  
   </tr>
 </table>  
   <table width="91%"  border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolordark="#F6B83B" bordercolorlight="#FFFFFF">
   <tr align="center" bgcolor="#e3F4F7">
-    <td width="26%" bgcolor="#F9D16B">����Ա����</td>
-    <td width="12%" bgcolor="#F9D16B">ϵͳ����</td>
-    <td width="12%" bgcolor="#F9D16B">���߹���</td>
-    <td width="12%" bgcolor="#F9D16B">ͼ�����</td>
-    <td width="11%" bgcolor="#F9D16B">ͼ��軹</td>
-    <td width="10%" bgcolor="#F9D16B">ϵͳ��ѯ</td>
-    <td width="9%" bgcolor="#F9D16B">Ȩ������</td>
-    <td width="8%" bgcolor="#F9D16B">ɾ��</td>
+    <td width="26%" bgcolor="#F9D16B">管理员名称</td>
+    <td width="12%" bgcolor="#F9D16B">系统设置</td>
+    <td width="12%" bgcolor="#F9D16B">读者管理</td>
+    <td width="12%" bgcolor="#F9D16B">图书管理</td>
+    <td width="11%" bgcolor="#F9D16B">图书借还</td>
+    <td width="10%" bgcolor="#F9D16B">系统查询</td>
+    <td width="9%" bgcolor="#F9D16B">权限设置</td>
+    <td width="8%" bgcolor="#F9D16B">删除</td>
   </tr>
 <%
   while(it.hasNext()){
@@ -85,9 +85,9 @@ if(coll==null || coll.isEmpty()){
     <td align="center"><input name="checkbox" type="checkbox" class="noborder" value="checkbox" disabled <%if(bookset==1){out.println("checked");}%>></td>
     <td align="center"><input name="checkbox" type="checkbox" class="noborder" value="checkbox" disabled <%if(borrowback==1){out.println("checked");}%>></td>
     <td align="center"><input name="checkbox" type="checkbox" class="noborder" value="checkbox" disabled <%if(sysquery==1){out.println("checked");}%>></td>
-    <td align="center"><%if(!name.equals("tsoft")){ %><a href="#" onClick="window.open('manager.do?action=managerModifyQuery&id=<%=ID%>','','width=292,height=175')">Ȩ������</a><%}else{%>&nbsp;<%}%></td>
+    <td align="center"><%if(!name.equals("tsoft")){ %><a href="#" onClick="window.open('manager.do?action=managerModifyQuery&id=<%=ID%>','','width=292,height=175')">权限设置</a><%}else{%>&nbsp;<%}%></td>
     <td align="center">
-	<%if(!name.equals("tsoft")){ %><a href="manager.do?action=managerDel&id=<%=ID%>">ɾ��</a><%}else{%>&nbsp;<%}%></td>
+	<%if(!name.equals("tsoft")){ %><a href="manager.do?action=managerDel&id=<%=ID%>">删除</a><%}else{%>&nbsp;<%}%></td>
   </tr>
 <%
   }

@@ -1,13 +1,13 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <html>
 <head>
-<title>操作成功!</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>鎿嶄綔鎴愬姛!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <body>
 <script language="javascript">
-alert("口令更改成功!");
+alert("鍙ｄ护鏇存敼鎴愬姛!");
 window.location.href="manager.do?action=querypwd";
 </script>		
 </body>

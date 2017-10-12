@@ -1,30 +1,30 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="com.actionForm.ManagerForm" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%
 ManagerForm managerForm=(ManagerForm)request.getAttribute("pwdQueryif");
 %>
 <head>
-<title>Í¼Êé¹İ¹ÜÀíÏµÍ³</title>
+<title>å›¾ä¹¦é¦†ç®¡ç†ç³»ç»Ÿ</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <script language="javascript">
 function checkForm(form){
 	if(form.oldpwd.value==""){
-		alert("ÇëÊäÈëµÄÔ­ÃÜÂë!");form.oldpwd.focus();return false;
+		alert("è¯·è¾“å…¥çš„åŸå¯†ç !");form.oldpwd.focus();return false;
 	}
 	if(form.oldpwd.value!=form.holdpwd.value){
-		alert("ÄúÊäÈëµÄÔ­ÃÜÂë²»ÕıÈ·£¬ÇëÖØĞÂÊäÈë!");form.oldpwd.value="";
+		alert("æ‚¨è¾“å…¥çš„åŸå¯†ç ä¸æ­£ç¡®ï¼Œè¯·é‡æ–°è¾“å…¥!");form.oldpwd.value="";
 		form.oldpwd.focus();return false;
 	}
 	if(form.pwd.value==""){
-		alert("ÇëÊäÈëµÄĞÂÃÜÂë!");form.pwd.focus();return false;
+		alert("è¯·è¾“å…¥çš„æ–°å¯†ç !");form.pwd.focus();return false;
 	}	
 	if(form.pwd1.value==""){
-		alert("ÇëÈ·ÈÏĞÂÃÜÂë!");form.pwd1.focus();return false;
+		alert("è¯·ç¡®è®¤æ–°å¯†ç !");form.pwd1.focus();return false;
 	}	
 	if(form.pwd.value!=form.pwd1.value){
-		alert("ÄúÁ½´ÎÊäÈëµÄĞÂÃÜÂë²»Ò»ÖÂ£¬ÇëÖØĞÂÊäÈë!");
+		alert("æ‚¨ä¸¤æ¬¡è¾“å…¥çš„æ–°å¯†ç ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥!");
 		form.pwd.value="";form.pwd1.value="";
 		form.pwd.focus();return false;
 	}
@@ -39,7 +39,7 @@ function checkForm(form){
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">µ±Ç°Î»ÖÃ£º¸ü¸Ä¿ÚÁî &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">å½“å‰ä½ç½®ï¼šæ›´æ”¹å£ä»¤ &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top">
@@ -50,27 +50,27 @@ function checkForm(form){
 </table>  <form name="form1" method="post" action="manager.do?action=modifypwd">
   <table width="47%"  border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolordark="#D2E3E6" bordercolorlight="#FFFFFF">
   <tr align="center">
-    <td width="27%" align="left" style="padding:5px;">¹ÜÀíÔ±Ãû³Æ£º</td>
+    <td width="27%" align="left" style="padding:5px;">ç®¡ç†å‘˜åç§°ï¼š</td>
     <td width="73%" align="left">
       <input name="name" type="text" id="name" value="<%=chStr.toChinese(managerForm.getName())%>" readonly="yes" size="30">    </td>
     <tr>
-    <td align="left" style="padding:5px;">Ô­ÃÜÂë£º</td>
+    <td align="left" style="padding:5px;">åŸå¯†ç ï¼š</td>
     <td align="left"><input name="oldpwd" type="password" id="oldpwd" size="30">
       <input name="holdpwd" type="hidden" id="holdpwd" value="<%=chStr.toChinese(managerForm.getPwd())%>"></td>
     </tr>
     <tr>
-      <td align="left" style="padding:5px;">ĞÂÃÜÂë£º</td>
+      <td align="left" style="padding:5px;">æ–°å¯†ç ï¼š</td>
       <td align="left"><input name="pwd" type="password" id="pwd" size="30"></td>
     </tr>
     <tr>
-      <td align="left" style="padding:5px;">È·ÈÏĞÂÃÜÂë£º</td>
+      <td align="left" style="padding:5px;">ç¡®è®¤æ–°å¯†ç ï¼š</td>
       <td align="left"><input name="pwd1" type="password" id="pwd1" size="30"></td>
     </tr>
     <tr>
       <td height="65" align="left" style="padding:5px;">&nbsp;</td>
-      <td><input name="Submit" type="submit" class="btn_grey" value="±£´æ" onClick="return checkForm(form1)">
+      <td><input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜" onClick="return checkForm(form1)">
         &nbsp;
-        <input name="Submit2" type="reset" class="btn_grey" value="È¡Ïû"></td>
+        <input name="Submit2" type="reset" class="btn_grey" value="å–æ¶ˆ"></td>
     </tr>
 </table>
 </form></td>
