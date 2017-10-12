@@ -22,7 +22,9 @@ public class ChStr {
 	    }
 	    return v;							//����ת������������v
 	}
-	////过滤危险字符
+	
+	//过滤危险字符
+	//过滤危险字符
 	public static final String filterStr(String str){
 		str=str.replaceAll(";","");
 		str=str.replaceAll("&","&amp;");
