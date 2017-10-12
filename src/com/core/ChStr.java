@@ -1,5 +1,5 @@
-package com.core;
 
+package com.core;
 public class ChStr {
 	public static String toChinese(String strvalue) {
 		try {
