@@ -3,26 +3,26 @@ package com.core;
 public class ChStr {
 	public static String toChinese(String strvalue) {
 		try {
-			if (strvalue == null) {										//µ±±äÁ¿strvalueÎªnullÊ±
-				strvalue="";											//½«±äÁ¿strvalue¸³ÖµÎª¿Õ
+			if (strvalue == null) {										//å½“å˜é‡strvalueä¸ºnullæ—¶
+				strvalue="";											//å°†å˜é‡strvalueèµ‹å€¼ä¸ºç©º
 			} else {
-				strvalue = new String(strvalue.getBytes("ISO8859_1"), "GBK");	//½«×Ö·û´®×ª»»ÎªGBK±àÂë
-				strvalue = strvalue.trim();								//È¥³ı×Ö·û´®µÄÊ×Î²¿Õ¸ñ
+				strvalue = new String(strvalue.getBytes("ISO8859_1"), "GBK");	//å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºGBKç¼–ç 
+				strvalue = strvalue.trim();								//å»é™¤å­—ç¬¦ä¸²çš„é¦–å°¾ç©ºæ ¼
 			}
 		} catch (Exception e) {
-			strvalue="";												//½«±äÁ¿strvalue¸³ÖµÎª¿Õ
+			strvalue="";												//å°†å˜é‡strvalueèµ‹å€¼ä¸ºç©º
 		}
-		return strvalue;												//·µ»Ø×ª»»ºóµÄÊäÈë±äÁ¿strvalue
+		return strvalue;												//è¿”å›è½¬æ¢åçš„è¾“å…¥å˜é‡strvalue
 	}
 
-	// ´¦Àí×Ö·û´®ÖĞµÄ¿ÕÖµ
+	// å¤„ç†å­—ç¬¦ä¸²ä¸­çš„ç©ºå€¼
 	public static final String nullToString(String v, String toV) {
-	    if (v == null || "".equals(v)) {			//µ±ÊäÈë±äÁ¿vÎª¿ÕÊ±
-	        v = toV;						//½«ÊäÈë±äÁ¿v¸³ÖµÎªÊäÈë±äÁ¿toV
+	    if (v == null || "".equals(v)) {			//å½“è¾“å…¥å˜é‡vä¸ºç©ºæ—¶
+	        v = toV;						//å°†è¾“å…¥å˜é‡vèµ‹å€¼ä¸ºè¾“å…¥å˜é‡toV
 	    }
-	    return v;							//·µ»Ø×ª»»ºóµÄÊäÈë±äÁ¿v
+	    return v;							//è¿”å›è½¬æ¢åçš„è¾“å…¥å˜é‡v
 	}
-	//¹ıÂËÎ£ÏÕ×Ö·û
+	//è¿‡æ»¤å±é™©å­—ç¬¦
 	public static final String filterStr(String str){
 		str=str.replaceAll(";","");
 		str=str.replaceAll("&","&amp;");
