@@ -72,10 +72,13 @@ if(coll==null || coll.isEmpty()){
   while(it.hasNext()){
     ReaderForm readerForm=(ReaderForm)it.next();
 	ID=readerForm.getId().intValue();
-	name=chStr.toChinese(readerForm.getName());
+	//name=chStr.toChinese(readerForm.getName());
+	name=readerForm.getName();
 	barcode=readerForm.getBarcode();
-	typename=chStr.nullToString(chStr.toChinese(readerForm.getTypename()),"&nbsp;");
-	paperType=chStr.toChinese(readerForm.getPaperType());
+	//typename=chStr.nullToString(chStr.toChinese(readerForm.getTypename()),"&nbsp;");
+	typename=chStr.nullToString(readerForm.getTypename(),"&nbsp;");
+	//paperType=chStr.toChinese(readerForm.getPaperType());
+	paperType=readerForm.getPaperType();
 	paperNO=chStr.nullToString(readerForm.getPaperNO(),"&nbsp;");
 	tel=chStr.nullToString(readerForm.getTel(),"&nbsp;");
 	email=chStr.nullToString(readerForm.getEmail(),"&nbsp;");
