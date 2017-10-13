@@ -61,7 +61,8 @@ if(coll==null || coll.isEmpty()){
   while(it.hasNext()){
     ReaderTypeForm readerTypeForm=(ReaderTypeForm)it.next();
 	ID=readerTypeForm.getId().intValue();
-	name=chStr.toChinese(readerTypeForm.getName());
+	//name=chStr.toChinese(readerTypeForm.getName());
+	name=readerTypeForm.getName();
 	number=readerTypeForm.getNumber();
 	%> 
   <tr>
