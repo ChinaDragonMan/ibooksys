@@ -105,10 +105,10 @@ if(coll==null || coll.isEmpty()){
 <%
   while(it.hasNext()){
     BorrowForm borrowForm=(BorrowForm)it.next();
-	bookname=chStr.toChinese(borrowForm.getBookName());
+	bookname=borrowForm.getBookName();
 	bookbarcode=borrowForm.getBookBarcode();
-	readerbar=chStr.toChinese(borrowForm.getReaderBarcode());
-	readername=chStr.toChinese(borrowForm.getReaderName());
+	readerbar=borrowForm.getReaderBarcode();
+	readername=borrowForm.getReaderName();
 	borrowTime=borrowForm.getBorrowTime();
 	backTime=borrowForm.getBackTime();
 	ifback=borrowForm.getIfBack();

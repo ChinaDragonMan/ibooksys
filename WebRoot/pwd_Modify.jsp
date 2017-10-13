@@ -52,11 +52,11 @@ function checkForm(form){
   <tr align="center">
     <td width="27%" align="left" style="padding:5px;">管理员名称：</td>
     <td width="73%" align="left">
-      <input name="name" type="text" id="name" value="<%=chStr.toChinese(managerForm.getName())%>" readonly="yes" size="30">    </td>
+      <input name="name" type="text" id="name" value="<%=managerForm.getName()%>" readonly="yes" size="30">    </td>
     <tr>
     <td align="left" style="padding:5px;">原密码：</td>
     <td align="left"><input name="oldpwd" type="password" id="oldpwd" size="30">
-      <input name="holdpwd" type="hidden" id="holdpwd" value="<%=chStr.toChinese(managerForm.getPwd())%>"></td>
+      <input name="holdpwd" type="hidden" id="holdpwd" value="<%=managerForm.getPwd()%>"></td>
     </tr>
     <tr>
       <td align="left" style="padding:5px;">新密码：</td>

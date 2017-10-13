@@ -74,12 +74,12 @@ if(coll==null || coll.isEmpty()){
   while(it.hasNext()){
     BookForm bookForm=(BookForm)it.next();
 	ID=bookForm.getId().intValue();
-	bookname=chStr.toChinese(bookForm.getBookName());
+	bookname=bookForm.getBookName();
 	barcode=bookForm.getBarcode();
 	if(barcode==null) barcode="";
-	typename=chStr.toChinese(bookForm.getTypeName());
-	publishing=chStr.toChinese(bookForm.getPublishing());
-	bookcase=chStr.toChinese(bookForm.getBookcaseName());
+	typename=bookForm.getTypeName();
+	publishing=bookForm.getPublishing();
+	bookcase=bookForm.getBookcaseName();
 	%> 
   <tr>
     <td style="padding:5px;">&nbsp;<%=barcode%></td>  
