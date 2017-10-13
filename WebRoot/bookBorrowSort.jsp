@@ -57,16 +57,24 @@ if(coll==null || coll.isEmpty()){
     </tr>
 <%
   while(it.hasNext()){
-    BorrowForm borrowForm=(BorrowForm)it.next();
-	bookname=chStr.toChinese(borrowForm.getBookName());
+    	BorrowForm borrowForm=(BorrowForm)it.next();
         barcode_book=borrowForm.getBookBarcode();
+		degree=borrowForm.getDegree();
+        price=borrowForm.getPrice();
+/* 		bookname=chStr.toChinese(borrowForm.getBookName());
         typename=chStr.toChinese(borrowForm.getBookType());
-	degree=borrowForm.getDegree();
-	bookcase=chStr.toChinese(borrowForm.getBookcaseName());
+		bookcase=chStr.toChinese(borrowForm.getBookcaseName());
         pub=chStr.toChinese(borrowForm.getPubName());
         author=chStr.toChinese(borrowForm.getAuthor());
-        price=borrowForm.getPrice();
-	%>
+ */	
+ 		bookname=borrowForm.getBookName();
+        typename=borrowForm.getBookType();
+		bookcase=borrowForm.getBookcaseName();
+        pub=borrowForm.getPubName();
+        author=borrowForm.getAuthor();
+ 
+ 
+ %>
   <tr>
     <td align="center">&nbsp;<%=degree%></td>
     <td style="padding:5px;">&nbsp;<%=barcode_book%></td>

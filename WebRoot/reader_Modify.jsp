@@ -86,7 +86,7 @@ function check(form){
   String operator=chStr.toChinese(readerForm.getOperator());
   String paperType=chStr.toChinese(readerForm.getPaperType());
   String typename=chStr.toChinese(readerForm.getTypename()); */
-  
+  int ID=readerForm.getId().intValue();
   String name=readerForm.getName();
   String vocation=readerForm.getVocation();
   String sex=readerForm.getSex();  
@@ -141,7 +141,7 @@ function check(form){
   while(it.hasNext()){
     ReaderTypeForm readerTypeForm=(ReaderTypeForm)it.next();
 	typeID=readerTypeForm.getId().intValue();
-	typeName=chStr.toChinese(readerTypeForm.getName());
+	typeName=readerTypeForm.getName();
 	%> 		
 				
           <option value="<%=typeID%>" <%if(typeid==typeID) out.println("selected");%>><%=typeName%></option>

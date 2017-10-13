@@ -59,15 +59,20 @@ Collection coll_book=(Collection)borrowDAO.bookBorrowSort();
 					  String translator="";
 					  Float price=new Float(0);
 						  while(it_book.hasNext() && i<6){
-						  BorrowForm borrowForm=(BorrowForm)it_book.next();
-						bookname=chStr.toChinese(borrowForm.getBookName());
+						    BorrowForm borrowForm=(BorrowForm)it_book.next();
 							barcode_book=borrowForm.getBookBarcode();
-							typename=chStr.toChinese(borrowForm.getBookType());
-						degree=borrowForm.getDegree();
-						bookcase=chStr.toChinese(borrowForm.getBookcaseName());
-							pub=chStr.toChinese(borrowForm.getPubName());
-							author=chStr.toChinese(borrowForm.getAuthor());
+						    degree=borrowForm.getDegree();
 							price=borrowForm.getPrice();
+							/* author=chStr.toChinese(borrowForm.getAuthor());
+						    bookname=chStr.toChinese(borrowForm.getBookName());
+							typename=chStr.toChinese(borrowForm.getBookType());
+						    bookcase=chStr.toChinese(borrowForm.getBookcaseName());
+							pub=chStr.toChinese(borrowForm.getPubName()); */
+							author=borrowForm.getAuthor();
+						    bookname=borrowForm.getBookName();
+							typename=borrowForm.getBookType();
+						    bookcase=borrowForm.getBookcaseName();
+							pub=borrowForm.getPubName();
 					
 						%> 
                   <tr>
