@@ -43,15 +43,17 @@ function check(form){
       <tr>
         <td align="center" valign="top"><table width="100%" height="493"  border="0" cellpadding="0" cellspacing="0">
   <tr>
-<%  int ID=readerForm.getId().intValue();
+<% 
+ /* int ID=readerForm.getId().intValue();
   String name=chStr.toChinese(readerForm.getName());
   String sex=chStr.toChinese(readerForm.getSex());  
+
 <<<<<<< HEAD
 =======
   String remark=chStr.toChinese(readerForm.getRemark());
   String operator=chStr.toChinese(readerForm.getOperator());
   String paperType=chStr.toChinese(readerForm.getPaperType());
-  String typename=chStr.toChinese(readerForm.getTypename()); */
+  String typename=chStr.toChinese(readerForm.getTypename()); 
   
   String name=readerForm.getName();
   String vocation=readerForm.getVocation();
@@ -76,6 +78,38 @@ function check(form){
   String typename=chStr.toChinese(readerForm.getTypename());
   String typeName="";
   int typeID=0;
+ */ 
+ /* String name=chStr.toChinese(readerForm.getName());
+  String vocation=chStr.toChinese(readerForm.getVocation());
+  String sex=chStr.toChinese(readerForm.getSex());  
+  String remark=chStr.toChinese(readerForm.getRemark());
+  String operator=chStr.toChinese(readerForm.getOperator());
+  String paperType=chStr.toChinese(readerForm.getPaperType());
+  String typename=chStr.toChinese(readerForm.getTypename()); */
+  
+  String name=readerForm.getName();
+  String vocation=readerForm.getVocation();
+  String sex=readerForm.getSex();  
+  String remark=readerForm.getRemark();
+  String operator=readerForm.getOperator();
+  String paperType=readerForm.getPaperType();
+  String typename=readerForm.getTypename();
+  
+  String barcode=readerForm.getBarcode();
+  String birthday=readerForm.getBirthday();
+  String paperNO=readerForm.getPaperNO();
+  String tel=readerForm.getTel();
+  String email=readerForm.getEmail();
+  String createDate=readerForm.getCreateDate();
+  int typeid=readerForm.getTypeid();
+  String typeName="";
+  int typeID=0;
+ 
+ 
+ 
+ 
+ 
+ 
   %>
     <td align="center" valign="top">
 	<form name="form1" method="post" action="reader.do?action=readerModify">
