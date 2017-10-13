@@ -49,14 +49,14 @@ int number=0;
 String typename="";
 if(readerForm!=null){
 	ID=readerForm.getId().intValue();
-	name=chStr.toChinese(readerForm.getName());
-	sex=chStr.toChinese(readerForm.getSex());
+	name=readerForm.getName();
+	sex=readerForm.getSex();
 	barcode=readerForm.getBarcode();
 	birthday=readerForm.getBirthday();
-	paperType=chStr.toChinese(readerForm.getPaperType());
+	paperType=readerForm.getPaperType();
 	paperNO=readerForm.getPaperNO();
 	number=readerForm.getNumber();
-	typename=chStr.toChinese(readerForm.getTypename());
+	typename=readerForm.getTypename();
 }
 %>
                 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -125,12 +125,12 @@ if(coll!=null && !coll.isEmpty()){
 	while(it.hasNext()){
 	BorrowForm borrowForm=(BorrowForm)it.next();
         id=borrowForm.getId().intValue();
-	bookname=chStr.toChinese(borrowForm.getBookName());
+	bookname=borrowForm.getBookName();
 	borrowTime=borrowForm.getBorrowTime();
 	backTime=borrowForm.getBackTime();
 	price=borrowForm.getPrice();
-	pubname=chStr.toChinese(borrowForm.getPubName());
-	bookcase=chStr.toChinese(borrowForm.getBookcaseName());
+	pubname=borrowForm.getPubName();
+	bookcase=borrowForm.getBookcaseName();
 %>
                 <tr>
                   <td height="25" style="padding:5px;">&nbsp;<%=bookname%></td>
@@ -139,7 +139,7 @@ if(coll!=null && !coll.isEmpty()){
                   <td align="center">&nbsp;<%=pubname%></td>
                   <td align="center">&nbsp;<%=bookcase%></td>
                   <td width="13%" align="center">&nbsp;<%=price%></td>
-                  <td width="12%" align="center"><a href="borrow.do?action=bookback&barcode=<%=barcode%>&id=<%=id%>&operator=<%=chStr.toChinese(manager)%>">归还</a>&nbsp;</td>
+                  <td width="12%" align="center"><a href="borrow.do?action=bookback&barcode=<%=barcode%>&id=<%=id%>&operator=<%=manager%>">归还</a>&nbsp;</td>
                 </tr>
                 <%	}
 }%>

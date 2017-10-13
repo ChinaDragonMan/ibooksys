@@ -64,14 +64,14 @@ int number=0;
 String typename="";
 if(readerForm!=null){
 	ID=readerForm.getId().intValue();
-	name=chStr.toChinese(readerForm.getName());
-	sex=chStr.toChinese(readerForm.getSex());
+	name=readerForm.getName();
+	sex=readerForm.getSex();
 	barcode=readerForm.getBarcode();
 	birthday=readerForm.getBirthday();
-	paperType=chStr.toChinese(readerForm.getPaperType());
+	paperType=readerForm.getPaperType();
 	paperNO=readerForm.getPaperNO();
 	number=readerForm.getNumber();
-	typename=chStr.toChinese(readerForm.getTypename());
+	typename=readerForm.getTypename();
 }
 %>
                 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -124,7 +124,7 @@ if(readerForm!=null){
 图书名称&nbsp;&nbsp;
 <input name="inputkey" type="text" id="inputkey" size="50">
                    <input name="Submit2" type="button" class="btn_grey" value="确定" onClick="checkbook(form1)">
-                   <input name="operator" type="hidden" id="operator" value="<%=chStr.toChinese(manager)%>">
+                   <input name="operator" type="hidden" id="operator" value="<%=manager%>">
   <input name="Button" type="button" class="btn_grey" value="完成借阅" onClick="window.location.href='bookBorrow.jsp'">
                    </td>
                </tr> 
@@ -150,12 +150,12 @@ if(coll!=null && !coll.isEmpty()){
 	Iterator it=coll.iterator();
 	while(it.hasNext()){
 	BorrowForm borrowForm=(BorrowForm)it.next();
-	bookname=chStr.toChinese(borrowForm.getBookName());
+	bookname=borrowForm.getBookName();
 	borrowTime=borrowForm.getBorrowTime();
 	backTime=borrowForm.getBackTime();
 	price=borrowForm.getPrice();
-	pubname=chStr.toChinese(borrowForm.getPubName());
-	bookcase=chStr.toChinese(borrowForm.getBookcaseName());
+	pubname=borrowForm.getPubName();
+	bookcase=borrowForm.getBookcaseName();
 %>
                    <tr>
                      <td height="25" style="padding:5px;">&nbsp;<%=bookname%></td>
