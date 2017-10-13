@@ -77,7 +77,8 @@ function check(form){
   while(it.hasNext()){
     ReaderTypeForm readerTypeForm=(ReaderTypeForm)it.next();
 	ID=readerTypeForm.getId().intValue();
-	name=chStr.toChinese(readerTypeForm.getName());
+	//name=chStr.toChinese(readerTypeForm.getName());
+	name=readerTypeForm.getName();
 	%> 		
 				
           <option value="<%=ID%>"><%=name%></option>
@@ -113,7 +114,7 @@ function check(form){
       <tr>
         <td align="center">Email：</td>
         <td><input name="email" type="text" id="email" size="50">
-          <input name="operator" type="hidden" id="operator" value="<%=chStr.toChinese(manager)%>"></td>
+          <input name="operator" type="hidden" id="operator" value="<%=manager%>"></td>
       </tr>
       <tr>
         <td align="center">备注：</td>
