@@ -37,20 +37,30 @@ function check(form){
   <tr>
     <td align="center" valign="top">
 <%  int ID=0;
-  String name=chStr.toChinese(readerForm.getName());
-  String sex=chStr.toChinese(readerForm.getSex());  
+  //String name=chStr.toChinese(readerForm.getName());
+  //String sex=chStr.toChinese(readerForm.getSex());  
+  String name=readerForm.getName();
+  String sex=readerForm.getSex();  
   String barcode=readerForm.getBarcode();
-  String vocation=chStr.toChinese(readerForm.getVocation());
+  //String vocation=chStr.toChinese(readerForm.getVocation());
+  String vocation=readerForm.getVocation();
   String birthday=readerForm.getBirthday();
-  String paperType=chStr.toChinese(readerForm.getPaperType());
   String paperNO=readerForm.getPaperNO();
   String tel=readerForm.getTel();
   String email=readerForm.getEmail();
-  String createDate=readerForm.getCreateDate();
-  String remark=chStr.toChinese(readerForm.getRemark());
-  String operator=chStr.toChinese(readerForm.getOperator());
+  String createDate=readerForm.getCreateDate();  
+  //String paperType=chStr.toChinese(readerForm.getPaperType());
+  //String remark=chStr.toChinese(readerForm.getRemark());
+  //String operator=chStr.toChinese(readerForm.getOperator());
+  //String typename=chStr.toChinese(readerForm.getTypename());
+  
+  String paperType=readerForm.getPaperType();
+  String remark=readerForm.getRemark();
+  String operator=readerForm.getOperator();
+  String typename=readerForm.getTypename();
+  
+  
   int typeid=readerForm.getTypeid();
-  String typename=chStr.toChinese(readerForm.getTypename());
   %>
 	<table width="600" height="432"  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tr>
