@@ -6,11 +6,14 @@
 <%@ page import="java.util.*"%>
 <html>
 <%
+
+
 String str=null;
 ReaderTypeDAO readerTypeDAO=new ReaderTypeDAO();
 Collection coll=(Collection)readerTypeDAO.query(str);
 Iterator it=coll.iterator();
 ReaderForm readerForm=(ReaderForm)request.getAttribute("readerQueryif");
+
 %>
 <script language="jscript">
 function check(form){
