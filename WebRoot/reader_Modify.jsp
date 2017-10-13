@@ -41,20 +41,28 @@ function check(form){
         <td align="center" valign="top"><table width="100%" height="493"  border="0" cellpadding="0" cellspacing="0">
   <tr>
 <%  int ID=readerForm.getId().intValue();
-  String name=chStr.toChinese(readerForm.getName());
-  String sex=chStr.toChinese(readerForm.getSex());  
-  String barcode=readerForm.getBarcode();
+  /* String name=chStr.toChinese(readerForm.getName());
   String vocation=chStr.toChinese(readerForm.getVocation());
-  String birthday=readerForm.getBirthday();
+  String sex=chStr.toChinese(readerForm.getSex());  
+  String remark=chStr.toChinese(readerForm.getRemark());
+  String operator=chStr.toChinese(readerForm.getOperator());
   String paperType=chStr.toChinese(readerForm.getPaperType());
+  String typename=chStr.toChinese(readerForm.getTypename()); */
+  String name=readerForm.getName();
+  String vocation=readerForm.getVocation();
+  String sex=readerForm.getSex();  
+  String remark=readerForm.getRemark();
+  String operator=readerForm.getOperator();
+  String paperType=readerForm.getPaperType();
+  String typename=readerForm.getTypename();
+  
+  String barcode=readerForm.getBarcode();
+  String birthday=readerForm.getBirthday();
   String paperNO=readerForm.getPaperNO();
   String tel=readerForm.getTel();
   String email=readerForm.getEmail();
   String createDate=readerForm.getCreateDate();
-  String remark=chStr.toChinese(readerForm.getRemark());
-  String operator=chStr.toChinese(readerForm.getOperator());
   int typeid=readerForm.getTypeid();
-  String typename=chStr.toChinese(readerForm.getTypename());
   String typeName="";
   int typeID=0;
   %>
@@ -88,7 +96,8 @@ function check(form){
   while(it.hasNext()){
     ReaderTypeForm readerTypeForm=(ReaderTypeForm)it.next();
 	typeID=readerTypeForm.getId().intValue();
-	typeName=chStr.toChinese(readerTypeForm.getName());
+	//typeName=chStr.toChinese(readerTypeForm.getName());
+	typeName=readerTypeForm.getName();
 	%> 		
 				
           <option value="<%=typeID%>" <%if(typeid==typeID) out.println("selected");%>><%=typeName%></option>
