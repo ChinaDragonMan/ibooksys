@@ -21,7 +21,7 @@ public class ReaderType extends Action {
         String action =request.getParameter("action");
         System.out.println("\nreaderType*********************action="+action);
         if(action==null||"".equals(action)){
-            request.setAttribute("error","ÄúµÄ²Ù×÷ÓĞÎó£¡");
+            request.setAttribute("error","æ‚¨çš„æ“ä½œæœ‰è¯¯ï¼");
             return mapping.findForward("error");
         }else if("readerTypeAdd".equals(action)){
             return readerTypeAdd(mapping,form,request,response);
@@ -34,10 +34,10 @@ public class ReaderType extends Action {
         }else if("readerTypeDel".equals(action)){
             return readerTypeDel(mapping,form,request,response);
         }
-        request.setAttribute("error","²Ù×÷Ê§°Ü£¡");
+        request.setAttribute("error","æ“ä½œå¤±è´¥ï¼");
         return mapping.findForward("error");
     }
-    /***********************Ìí¼Ó¶ÁÕßÀàĞÍĞÅÏ¢**************************/
+    /***********************æ·»åŠ è¯»è€…ç±»å‹ä¿¡æ¯**************************/
     private ActionForward readerTypeAdd(ActionMapping mapping, ActionForm form,
                            HttpServletRequest request,
                            HttpServletResponse response){
@@ -46,16 +46,16 @@ public class ReaderType extends Action {
            readerTypeForm.setName(readerTypeForm.getName());
            int a=readerTypeDAO.insert(readerTypeForm);
            if(a==0){
-               request.setAttribute("error","¶ÁÕßÀàĞÍĞÅÏ¢Ìí¼ÓÊ§°Ü£¡");
+               request.setAttribute("error","è¯»è€…ç±»å‹ä¿¡æ¯æ·»åŠ å¤±è´¥ï¼");
                return mapping.findForward("error");
          }else if(a==2){
-             request.setAttribute("error","¸Ã¶ÁÕßÀàĞÍĞÅÏ¢ÒÑ¾­Ìí¼Ó£¡");
+             request.setAttribute("error","è¯¥è¯»è€…ç±»å‹ä¿¡æ¯å·²ç»æ·»åŠ ï¼");
              return mapping.findForward("error");
          }else{
              return mapping.findForward("readerTypeAdd");
         }
        }
-       /***********************²éÑ¯È«²¿¶ÁÕßÀàĞÍĞÅÏ¢**************************/
+       /***********************æŸ¥è¯¢å…¨éƒ¨è¯»è€…ç±»å‹ä¿¡æ¯**************************/
        private ActionForward readerTypeQuery(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request,
                               HttpServletResponse response){
@@ -63,7 +63,7 @@ public class ReaderType extends Action {
        request.setAttribute("readerType",readerTypeDAO.query(str));
        return mapping.findForward("readerTypeQuery");
        }
-        /***********************²éÑ¯ĞŞ¸Ä¶ÁÕßÀàĞÍĞÅÏ¢**************************/
+        /***********************æŸ¥è¯¢ä¿®æ”¹è¯»è€…ç±»å‹ä¿¡æ¯**************************/
         private ActionForward readerTypeModifyQuery(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request,
                               HttpServletResponse response){
@@ -72,7 +72,7 @@ public class ReaderType extends Action {
             request.setAttribute("readerTypeQueryif",readerTypeDAO.queryM(readerTypeForm));
             return mapping.findForward("readerTypeQueryModify");
         }
-        /***********************ĞŞ¸Ä¶ÁÕßÀàĞÍĞÅÏ¢**************************/
+        /***********************ä¿®æ”¹è¯»è€…ç±»å‹ä¿¡æ¯**************************/
         private ActionForward readerTypeModify(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request,
                               HttpServletResponse response){
@@ -81,13 +81,13 @@ public class ReaderType extends Action {
             readerTypeForm.setNumber(readerTypeForm.getNumber());
             int ret=readerTypeDAO.update(readerTypeForm);
             if(ret==0){
-                request.setAttribute("error","ĞŞ¸Ä¶ÁÕßÀàĞÍĞÅÏ¢Ê§°Ü£¡");
+                request.setAttribute("error","ä¿®æ”¹è¯»è€…ç±»å‹ä¿¡æ¯å¤±è´¥ï¼");
                 return mapping.findForward("error");
             }else{
                 return mapping.findForward("readerTypeModify");
             }
         }
-        /***********************É¾³ı¶ÁÕßÀàĞÍĞÅÏ¢**************************/
+        /***********************åˆ é™¤è¯»è€…ç±»å‹ä¿¡æ¯**************************/
         private ActionForward readerTypeDel(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request,
                               HttpServletResponse response){
@@ -95,7 +95,7 @@ public class ReaderType extends Action {
             readerTypeForm.setId(Integer.valueOf(request.getParameter("ID")));
             int ret=readerTypeDAO.delete(readerTypeForm);
             if(ret==0){
-                request.setAttribute("error","É¾³ı¶ÁÕßÀàĞÍĞÅÏ¢Ê§°Ü£¡(Ñ§Éú²»ÄÜ±»É¾³ı)");
+                request.setAttribute("error","åˆ é™¤è¯»è€…ç±»å‹ä¿¡æ¯å¤±è´¥ï¼(å­¦ç”Ÿä¸èƒ½è¢«åˆ é™¤)");
                 return mapping.findForward("error");
             }else{
                 return mapping.findForward("readerTypeDel");
