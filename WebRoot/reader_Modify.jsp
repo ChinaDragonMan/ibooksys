@@ -46,6 +46,22 @@ function check(form){
 <%  int ID=readerForm.getId().intValue();
   String name=chStr.toChinese(readerForm.getName());
   String sex=chStr.toChinese(readerForm.getSex());  
+<<<<<<< HEAD
+=======
+  String remark=chStr.toChinese(readerForm.getRemark());
+  String operator=chStr.toChinese(readerForm.getOperator());
+  String paperType=chStr.toChinese(readerForm.getPaperType());
+  String typename=chStr.toChinese(readerForm.getTypename()); */
+  
+  String name=readerForm.getName();
+  String vocation=readerForm.getVocation();
+  String sex=readerForm.getSex();  
+  String remark=readerForm.getRemark();
+  String operator=readerForm.getOperator();
+  String paperType=readerForm.getPaperType();
+  String typename=readerForm.getTypename();
+  
+>>>>>>> fix_bug_readMgr
   String barcode=readerForm.getBarcode();
   String vocation=chStr.toChinese(readerForm.getVocation());
   String birthday=readerForm.getBirthday();
