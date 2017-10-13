@@ -6,8 +6,6 @@
 <%@ page import="java.util.*"%>
 <html>
 <%
-
-
 String str=null;
 ReaderTypeDAO readerTypeDAO=new ReaderTypeDAO();
 Collection coll=(Collection)readerTypeDAO.query(str);
