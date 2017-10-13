@@ -48,6 +48,7 @@ function check(form){
   String operator=chStr.toChinese(readerForm.getOperator());
   String paperType=chStr.toChinese(readerForm.getPaperType());
   String typename=chStr.toChinese(readerForm.getTypename()); */
+  
   String name=readerForm.getName();
   String vocation=readerForm.getVocation();
   String sex=readerForm.getSex();  
