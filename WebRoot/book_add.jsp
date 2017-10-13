@@ -91,7 +91,8 @@ function check(form){
   while(it_type.hasNext()){
     BookTypeForm bookTypeForm=(BookTypeForm)it_type.next();
 	typeID=bookTypeForm.getId().intValue();
-	typename=chStr.toChinese(bookTypeForm.getTypeName());
+	//typename=chStr.toChinese(bookTypeForm.getTypeName());
+	typename=bookTypeForm.getTypeName();
 	%> 		
 				
           <option value="<%=typeID%>"><%=typename%></option>
@@ -113,7 +114,8 @@ function check(form){
   while(it_pub.hasNext()){
     PublishingForm pubForm=(PublishingForm)it_pub.next();
 	isbn=pubForm.getIsbn();
-	pubname=chStr.toChinese(pubForm.getPubname());
+	//pubname=chStr.toChinese(pubForm.getPubname());
+	pubname=pubForm.getPubname();
 	%> 		
 				
           <option value="<%=isbn%>"><%=pubname%></option>
@@ -136,13 +138,13 @@ function check(form){
   while(it_bookcase.hasNext()){
     BookCaseForm bookCaseForm=(BookCaseForm)it_bookcase.next();
 	bookcaseID=bookCaseForm.getId().intValue();
-	bookcasename=chStr.toChinese(bookCaseForm.getName());
+	bookcasename=bookCaseForm.getName();
 	%> 		
 				
           <option value="<%=bookcaseID%>"><%=bookcasename%></option>
 <%}%> 
         </select>
-          <input name="operator" type="hidden" id="operator" value="<%=chStr.toChinese(manager)%>"></td>
+          <input name="operator" type="hidden" id="operator" value="<%=manager%>"></td>
       </tr>
       <tr>
         <td align="center">&nbsp;</td>

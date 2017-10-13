@@ -30,7 +30,7 @@ ChStr chStr=new ChStr();
   <table width="100%" height="111" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="29%" align="center">类型名称：      </td>
-    <td width="71%"><input name="typeName" type="text" size="30" value="<%=chStr.toChinese(bookTypeForm.getTypeName())%>">
+    <td width="71%"><input name="typeName" type="text" size="30" value="<%=bookTypeForm.getTypeName()%>">
       </td>
   </tr>
   <tr>

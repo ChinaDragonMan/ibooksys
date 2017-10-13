@@ -73,21 +73,21 @@ function check(form){
     <td align="center" valign="top">
 	<form name="form1" method="post" action="book.do?action=bookModify">
 <%	int ID=bookForm.getId().intValue();
-	String bookname=chStr.toChinese(bookForm.getBookName());
+	String bookname=bookForm.getBookName();
 	String barcode=bookForm.getBarcode();
 	if(barcode==null) barcode="";
 	int TypeId=bookForm.getTypeId();
-	String typename=chStr.toChinese(bookForm.getTypeName());
-	String author=chStr.toChinese(bookForm.getAuthor());
-	String translator=chStr.toChinese(bookForm.getTranslator());	
+	String typename=bookForm.getTypeName();
+	String author=bookForm.getAuthor();
+	String translator=bookForm.getTranslator();	
 	String ISBN=bookForm.getIsbn();
-	String publishing=chStr.toChinese(bookForm.getPublishing());
+	String publishing=bookForm.getPublishing();
 	Float price=bookForm.getPrice();
 	int pages=bookForm.getPage();
 	int bookcaseid=bookForm.getBookcaseid();
-	String bookcase=chStr.toChinese(bookForm.getBookcaseName());	
+	String bookcase=bookForm.getBookcaseName();	
 	String inTime=bookForm.getInTime();
-	String operator=chStr.toChinese(bookForm.getOperator());
+	String operator=bookForm.getOperator();
   %>
 	<table width="600" height="432"  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tr>
@@ -109,7 +109,7 @@ function check(form){
   while(it_type.hasNext()){
     BookTypeForm bookTypeForm=(BookTypeForm)it_type.next();
 	typeID=bookTypeForm.getId().intValue();
-	typename1=chStr.toChinese(bookTypeForm.getTypeName());
+	typename1=bookTypeForm.getTypeName();
 	%> 		
 				
           <option value="<%=typeID%>" <%if(TypeId==typeID) out.println("selected");%>><%=typename1%></option>
@@ -131,7 +131,7 @@ function check(form){
   while(it_pub.hasNext()){
     PublishingForm pubForm=(PublishingForm)it_pub.next();
 	isbn=pubForm.getIsbn();
-	pubname=chStr.toChinese(pubForm.getPubname());
+	pubname=pubForm.getPubname();
 	%> 		
 				
           <option value="<%=isbn%>" <%if(isbn.equals(ISBN)) out.println("selected");%>><%=pubname%></option>
@@ -154,13 +154,13 @@ function check(form){
   while(it_bookcase.hasNext()){
     BookCaseForm bookCaseForm=(BookCaseForm)it_bookcase.next();
 	bookcaseID=bookCaseForm.getId().intValue();
-	bookcasename=chStr.toChinese(bookCaseForm.getName());
+	bookcasename=bookCaseForm.getName();
 	%> 		
 				
           <option value="<%=bookcaseID%>" <%if(bookcaseid==bookcaseID) out.println("selected");%>><%=bookcasename%></option>
 <%}%> 
         </select>
-          <input name="operator" type="hidden" id="operator" value="<%=chStr.toChinese(manager)%>"></td>
+          <input name="operator" type="hidden" id="operator" value="<%=manager%>"></td>
       </tr>
      
       <tr>

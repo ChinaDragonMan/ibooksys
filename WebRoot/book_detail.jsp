@@ -28,19 +28,18 @@ BookForm bookForm=(BookForm)request.getAttribute("bookDetail");
     <td align="center" valign="top">
 <%  
 	int ID=bookForm.getId().intValue();
-	String bookname=chStr.toChinese(bookForm.getBookName());
+	String bookname=bookForm.getBookName();
 	String barcode=bookForm.getBarcode();
 	if(barcode==null) barcode="";
-	String typename=chStr.toChinese(bookForm.getTypeName());
-	String author=chStr.toChinese(bookForm.getAuthor());
-	String translator=chStr.toChinese(bookForm.getTranslator());	
-	String publishing=chStr.toChinese(bookForm.getPublishing());
+	String typename=bookForm.getTypeName();
+	String author=bookForm.getAuthor();
+	String translator=bookForm.getTranslator();	
+	String publishing=bookForm.getPublishing();
 	Float price=bookForm.getPrice();
 	int pages=bookForm.getPage();
-	String bookcase=chStr.toChinese(bookForm.getBookcaseName());	
-
+	String bookcase=bookForm.getBookcaseName();	
 	String inTime=bookForm.getInTime();
-	String operator=chStr.toChinese(bookForm.getOperator());
+	String operator=bookForm.getOperator();
   %>
 	<table width="600" height="432"  border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tr>

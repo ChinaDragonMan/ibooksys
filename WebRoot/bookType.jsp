@@ -62,7 +62,8 @@ if(coll==null || coll.isEmpty()){
   while(it.hasNext()){
     BookTypeForm bookTypeForm=(BookTypeForm)it.next();
 	ID=bookTypeForm.getId().intValue();
-	typename=chStr.toChinese(bookTypeForm.getTypeName());
+	//typename=chStr.toChinese(bookTypeForm.getTypeName());
+	typename=bookTypeForm.getTypeName();
 	days=bookTypeForm.getDays();
 	%> 
   <tr>
