@@ -5,7 +5,8 @@
 ManagerForm managerForm=(ManagerForm)request.getAttribute("managerQueryif");
 ChStr chStr=new ChStr();
 int ID=managerForm.getId().intValue();
-String	name=chStr.toChinese(managerForm.getName());
+//String	name=chStr.toChinese(managerForm.getName());
+String	name=managerForm.getName();
 int sysset=managerForm.getSysset();
 int readerset=managerForm.getReaderset();
 int bookset=managerForm.getBookset();

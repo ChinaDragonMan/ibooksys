@@ -29,7 +29,7 @@ public ParameterForm query(){
 public int update(ParameterForm parameterForm){
     String sql="UPDATE tb_parameter SET cost="+parameterForm.getCost()+",validity="+parameterForm.getValidity()+" where id=1";
     int ret=conn.executeUpdate(sql);
-    System.out.println("ĞŞ¸Ä²ÎÊıÉèÖÃĞÅÏ¢Ê±µÄSQL£º"+sql);
+    System.out.println("ä¿®æ”¹å‚æ•°è®¾ç½®ä¿¡æ¯æ—¶çš„SQLï¼š"+sql);
     conn.close();
     return ret;
 }

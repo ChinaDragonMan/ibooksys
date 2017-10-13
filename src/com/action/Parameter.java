@@ -24,7 +24,7 @@ public class Parameter extends Action {
         }else if("parameterModify".equals(str)){
             return parameterModify(mapping,form,request,response);
         }
-        request.setAttribute("error","ÄúµÄ²Ù×÷ÓĞÎó£¡");
+        request.setAttribute("error","æ‚¨çš„æ“ä½œæœ‰è¯¯ï¼");
         return mapping.findForward("error");
     }
     private ActionForward parameterModify(ActionMapping mapping, ActionForm form,
@@ -37,7 +37,7 @@ public class Parameter extends Action {
         parameterForm.setValidity(parameterForm.getValidity());
         int ret = parameterDAO.update(parameterForm);
         if (ret ==0) {
-            request.setAttribute("error", "²ÎÊıÉèÖÃĞÅÏ¢ĞŞ¸ÄÊ§°Ü£¡");
+            request.setAttribute("error", "å‚æ•°è®¾ç½®ä¿¡æ¯ä¿®æ”¹å¤±è´¥ï¼");
             return mapping.findForward("error");
         } else {
             return mapping.findForward("parametermodify");

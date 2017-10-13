@@ -71,7 +71,8 @@ if(coll==null || coll.isEmpty()){
 
     ManagerForm managerForm=(ManagerForm)it.next();
 	ID=managerForm.getId().intValue();
-	name=chStr.toChinese(managerForm.getName());
+	//name=chStr.toChinese(managerForm.getName());
+	name=managerForm.getName();
 	sysset=managerForm.getSysset();
 	readerset=managerForm.getReaderset();
 	bookset=managerForm.getBookset();
