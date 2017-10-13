@@ -29,7 +29,7 @@ ChStr chStr=new ChStr();
       <tr>
         <td height="50" align="center">            书架名称：
             <input name="id" type="hidden" size="50" value="<%=bookCaseForm.getId()%>">
-    <input name="name" type="text" value="<%=chStr.toChinese(bookCaseForm.getName())%>"></td>
+    <input name="name" type="text" value="<%=bookCaseForm.getName()%>"></td>
       </tr>
       <tr>
         <td height="35" align="center"><input name="Submit" type="submit" class="btn_grey" value="保存">

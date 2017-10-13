@@ -32,10 +32,10 @@ public class BookCase extends Action {
     }else if("bookCaseDel".equals(action)){
         return bookCaseDel(mapping,form,request,response);
     }
-        request.setAttribute("error","≤Ÿ◊˜ ß∞‹£°");
+        request.setAttribute("error","Êìç‰ΩúÂ§±Ë¥•ÔºÅ");
         return mapping.findForward("error");
     }
- /***********************ÃÌº” Èº‹–≈œ¢**************************/
+ /***********************Ê∑ªÂä†‰π¶Êû∂‰ø°ÊÅØ**************************/
  private ActionForward bookCaseAdd(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request,
                               HttpServletResponse response){
@@ -44,16 +44,16 @@ public class BookCase extends Action {
         bookCaseForm.setName(bookCaseForm.getName());
         int a=bookCaseDAO.insert(bookCaseForm);
         if(a==0){
-            request.setAttribute("error"," Èº‹–≈œ¢ÃÌº” ß∞‹£°");
+            request.setAttribute("error","‰π¶Êû∂‰ø°ÊÅØÊ∑ªÂä†Â§±Ë¥•ÔºÅ");
             return mapping.findForward("error");
       }else if(a==2){
-          request.setAttribute("error","∏√ Èº‹–≈œ¢“—æ≠ÃÌº”£°");
+          request.setAttribute("error","ËØ•‰π¶Êû∂‰ø°ÊÅØÂ∑≤ÁªèÊ∑ªÂä†ÔºÅ");
           return mapping.findForward("error");
       }else{
           return mapping.findForward("bookcaseAdd");
      }
     }
-    /***********************≤È—Ø»´≤ø Èº‹–≈œ¢**************************/
+    /***********************Êü•ËØ¢ÂÖ®ÈÉ®‰π¶Êû∂‰ø°ÊÅØ**************************/
     private ActionForward bookCaseQuery(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request,
                               HttpServletResponse response){
@@ -61,7 +61,7 @@ public class BookCase extends Action {
     request.setAttribute("bookcase",bookCaseDAO.query(str));
     return mapping.findForward("bookcaseQuery");
     }
-     /***********************≤È—Ø–ﬁ∏ƒ Èº‹–≈œ¢**************************/
+     /***********************Êü•ËØ¢‰øÆÊîπ‰π¶Êû∂‰ø°ÊÅØ**************************/
      private ActionForward bookCaseModifyQuery(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request,
                               HttpServletResponse response){
@@ -70,7 +70,7 @@ public class BookCase extends Action {
          request.setAttribute("bookCaseQueryif",bookCaseDAO.queryM(bookCaseForm));
          return mapping.findForward("bookCaseQueryModify");
      }
-     /***********************–ﬁ∏ƒ Èº‹–≈œ¢**************************/
+     /***********************‰øÆÊîπ‰π¶Êû∂‰ø°ÊÅØ**************************/
      private ActionForward bookCaseModify(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request,
                               HttpServletResponse response){
@@ -78,13 +78,13 @@ public class BookCase extends Action {
          bookCaseForm.setName(request.getParameter("name"));
          int ret=bookCaseDAO.update(bookCaseForm);
          if(ret==0){
-             request.setAttribute("error","–ﬁ∏ƒ Èº‹–≈œ¢ ß∞‹£°");
+             request.setAttribute("error","‰øÆÊîπ‰π¶Êû∂‰ø°ÊÅØÂ§±Ë¥•ÔºÅ");
              return mapping.findForward("error");
          }else{
              return mapping.findForward("bookCaseModify");
          }
      }
-     /***********************…æ≥˝ Èº‹–≈œ¢**************************/
+     /***********************Âà†Èô§‰π¶Êû∂‰ø°ÊÅØ**************************/
      private ActionForward bookCaseDel(ActionMapping mapping, ActionForm form,
                               HttpServletRequest request,
                               HttpServletResponse response
@@ -93,7 +93,7 @@ public class BookCase extends Action {
          bookCaseForm.setId(Integer.valueOf(request.getParameter("ID")));
          int ret=bookCaseDAO.delete(bookCaseForm);
          if(ret==0){
-             request.setAttribute("error","…æ≥˝ Èº‹–≈œ¢ ß∞‹£°");
+             request.setAttribute("error","Âà†Èô§‰π¶Êû∂‰ø°ÊÅØÂ§±Ë¥•ÔºÅ");
              return mapping.findForward("error");
          }else{
              return mapping.findForward("bookCaseDel");

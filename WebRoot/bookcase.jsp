@@ -60,7 +60,8 @@ if(coll==null || coll.isEmpty()){
   while(it.hasNext()){
     BookCaseForm bookCaseForm=(BookCaseForm)it.next();
 	ID=bookCaseForm.getId().intValue();
-	name=chStr.toChinese(bookCaseForm.getName());
+	//name=chStr.toChinese(bookCaseForm.getName());
+	name=bookCaseForm.getName();
 	%> 
   <tr>
     <td style="padding:5px;"><%=name%></td>

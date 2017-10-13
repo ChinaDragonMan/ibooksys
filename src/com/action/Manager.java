@@ -45,11 +45,19 @@ public class Manager extends Action {
 
 	public ActionForward managerLogin(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
+		/*
+		System.out.println(request.getRequestURL());//   http://localhost:8080/ibookSys/manager.do
+		System.out.println(request.getRequestURI());//   /ibookSys/manager.do
+		System.out.println(request.getContextPath());//   /ibookSys
+		System.out.println(request.getServletPath());//   /manager.do
+		System.out.println(request.getPathInfo());//      null
+		System.out.println(request.getParameter("action"));// login
+		*/
 		ManagerForm managerForm = (ManagerForm) form;
 		managerForm.setName(managerForm.getName());
 		managerForm.setPwd(managerForm.getPwd());
 		int ret = managerDAO.checkManager(managerForm);
-		System.out.print("验证结果ret的值:" + ret);
+		System.out.println("验证结果ret的值:" + ret);
 		if (ret == 1) {
 			HttpSession session = request.getSession();
 			session.setAttribute("manager", managerForm.getName());

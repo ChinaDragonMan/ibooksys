@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class BookCaseDAO {
     private ConnDB conn=new ConnDB();
-    //²éÑ¯Êı¾İ
+    //æŸ¥è¯¢æ•°æ®
     public Collection query(String strif){
         BookCaseForm bookCaseForm1=null;
         Collection bookcaseColl=new ArrayList();
@@ -30,11 +30,11 @@ public class BookCaseDAO {
         conn.close();
         return bookcaseColl;
     }
-    //ÓÃÓÚĞŞ¸ÄµÄ²éÑ¯
+    //ç”¨äºä¿®æ”¹çš„æŸ¥è¯¢
     public BookCaseForm queryM(BookCaseForm bookCaseForm){
         BookCaseForm bookCaseForm1=null;
         String sql="select * from tb_bookcase where id="+bookCaseForm.getId()+"";
-        System.out.println("ĞŞ¸ÄÊ±µÄSQL£º"+sql);
+        System.out.println("ä¿®æ”¹æ—¶çš„SQLï¼š"+sql);
         ResultSet rs=conn.executeQuery(sql);
         try {
             while (rs.next()) {
@@ -47,7 +47,7 @@ public class BookCaseDAO {
         conn.close();
         return bookCaseForm1;
     }
-   //Ìí¼ÓÊı¾İ
+   //æ·»åŠ æ•°æ®
     public int insert(BookCaseForm bookCaseForm){
     String sql1="SELECT * FROM tb_bookcase WHERE name='"+bookCaseForm.getName()+"'";
     ResultSet rs = conn.executeQuery(sql1);
@@ -59,7 +59,7 @@ public class BookCaseDAO {
         } else {
             sql ="Insert into tb_bookcase (name) values('"+bookCaseForm.getName()+"')";
             falg = conn.executeUpdate(sql);
-            System.out.println("Ìí¼ÓÊé¼ÜĞÅÏ¢µÄSQL£º" + sql);
+            System.out.println("æ·»åŠ ä¹¦æ¶ä¿¡æ¯çš„SQLï¼š" + sql);
             conn.close();
         }
     } catch (SQLException ex) {
@@ -69,24 +69,24 @@ public class BookCaseDAO {
     return falg;
 }
 
-    //ĞŞ¸ÄÊı¾İ
+    //ä¿®æ”¹æ•°æ®
     public int update(BookCaseForm bookCaseForm){
     String sql="Update tb_bookcase set name='"+bookCaseForm.getName()+"' where id="+bookCaseForm.getId()+"";
     int falg=conn.executeUpdate(sql);
-    System.out.println("ĞŞ¸ÄÊı¾İÊ±µÄSQL£º"+sql);
+    System.out.println("ä¿®æ”¹æ•°æ®æ—¶çš„SQLï¼š"+sql);
     conn.close();
     return falg;
 }
-    //É¾³ıÊı¾İ
+    //åˆ é™¤æ•°æ®
     public int delete(BookCaseForm bookCaseForm){
-    	String sql_1="SELECT * FROM tb_bookcase WHERE bookcase="+bookCaseForm.getId()+"";
+    	String sql_1="SELECT * FROM tb_bookcase WHERE id="+bookCaseForm.getId()+"";
     	ResultSet rs=conn.executeQuery(sql_1);
     	int falg=0;
     	try {
-    		if(!rs.next()){
+    		if(rs.next()){
     			String sql="Delete from tb_bookcase where id="+bookCaseForm.getId()+"";
     			falg=conn.executeUpdate(sql);
-    			System.out.println("É¾³ıÊ±µÄSQL£º"+sql);
+    			System.out.println("åˆ é™¤æ—¶çš„SQLï¼š"+sql);
     		}
     	} catch (Exception e) {
     		e.printStackTrace();
