@@ -3,14 +3,14 @@ package com.actionForm;
 import org.apache.struts.action.ActionForm;
 
 public class ManagerForm extends ActionForm {
-    private Integer id=new Integer(-1);  //¹ÜÀíÔ±IDºÅ
-    private String name="";   //¹ÜÀíÔ±Ãû³Æ
-    private String pwd="";  //¹ÜÀíÔ±ÃÜÂë
-    private int sysset=0;  //ÏµÍ³ÉèÖÃÈ¨ÏŞ
-    private int readerset=0;   //¶ÁÕß¹ÜÀíÈ¨ÏŞ
-    private int bookset=0;   //Í¼Êé¹ÜÀíÈ¨ÏŞ
-    private int borrowback=0;   //Í¼Êé½è»¹È¨ÏŞ
-    private int sysquery=0;    //ÏµÍ³²éÑ¯È¨ÏŞ
+	 private Integer id=new Integer(-1);  //ç®¡ç†å‘˜IDå·
+	    private String name="";   //ç®¡ç†å‘˜åç§°
+	    private String pwd="";  //ç®¡ç†å‘˜å¯†ç 
+	    private int sysset=0;  //ç³»ç»Ÿè®¾ç½®æƒé™
+	    private int readerset=0;   //è¯»è€…ç®¡ç†æƒé™
+	    private int bookset=0;   //å›¾ä¹¦ç®¡ç†æƒé™
+	    private int borrowback=0;   //å›¾ä¹¦å€Ÿè¿˜æƒé™
+	    private int sysquery=0;    //ç³»ç»ŸæŸ¥è¯¢æƒé™
     public Integer getId() {
         return id;
     }

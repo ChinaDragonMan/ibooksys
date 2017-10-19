@@ -101,7 +101,7 @@ function check(form){
         <td><input name="paperNO2" type="text" id="paperNO2" value="<%=createDate%>"></td>
       </tr>
       <tr>
-        <td height="30" align="center">电&nbsp;&nbsp;&nbsp;&nbsp;话：</td>
+        <td height="30" align="center">年&nbsp;&nbsp;&nbsp;&nbsp;级：</td>
         <td><input name="tel" type="text" id="tel" value="<%=tel%>"></td>
       </tr>
       <tr>

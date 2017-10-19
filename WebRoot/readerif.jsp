@@ -19,7 +19,7 @@ Collection coll=(Collection)request.getAttribute("reader");
   <tr>
     <td height="510" valign="top" style="padding:5px;"><table width="98%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="22" valign="top" class="word_orange">当前位置：读者管理 &gt; 读者档案管理 &gt;&gt;&gt;</td>
+        <td height="22" valign="top" class="word_orange">当前位置：读者管理 &gt; 读者档案查询 &gt;&gt;&gt;</td>
       </tr>
       <tr>
         <td align="center" valign="top"><%
@@ -50,10 +50,32 @@ if(coll==null || coll.isEmpty()){
   String email="";
   %>
  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="87%">&nbsp;      </td>
-<td width="13%">
-      <a href="reader_add.jsp">添加读者信息</a></td>	  
+  <tr>&nbsp;
+  
+  <form action="" method="post">
+    	<label>年级:</label>
+    	<select name="grade">
+    	<option value="0" selected>未选择</option>
+    	<option value="1">一年级</option>
+    	<option value="2">二年级</option>
+    	<option value="3">三年级</option>
+    	<option value="4">四年级</option>
+    	<option value="5">五年级</option>
+    	<option value="6">六年级</option>
+    	</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	<label>性别:</label>
+    	<select name="sex">
+    	<option value="0" selected>未选择</option>
+    	<option value="1">男</option>
+    	<option value="2">女</option>
+    	</select>
+    	
+    	
+    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	<input type="submit"  class="btn_grey" value="查找">
+	</form>
+	
+		  
   </tr>
 </table>  
   <table width="95%"  border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolordark="#F6B83B" bordercolorlight="#FFFFFF">
@@ -65,8 +87,7 @@ if(coll==null || coll.isEmpty()){
     <td width="20%" bgcolor="#F9D16B">证件号码</td>
     <td width="12%" bgcolor="#F9D16B">年级</td>
     <td width="15%" bgcolor="#F9D16B">Email</td>
-    <td width="5%" bgcolor="#F9D16B">修改</td>
-    <td width="5%" bgcolor="#F9D16B">删除</td>
+    
   </tr>
 <%
   while(it.hasNext()){
@@ -91,8 +112,7 @@ if(coll==null || coll.isEmpty()){
     <td align="center"><%=paperNO%></td>
     <td align="center"><%=tel%></td>
     <td align="center"><%=email%></td>
-    <td align="center"><a href="reader.do?action=readerModifyQuery&ID=<%=ID%>">修改</a></td>
-    <td align="center"><a href="reader.do?action=readerDel&ID=<%=ID%>">删除</a></td>
+    
   </tr>
 <%
   }

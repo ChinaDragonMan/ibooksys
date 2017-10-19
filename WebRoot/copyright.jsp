@@ -5,12 +5,12 @@
   </tr>
       <tr>
         <td width="124" height="23">&nbsp;</td>
-        <td valign="bottom" align="center"> CopyRight &copy; 2013 www.52itstyle.com <a href="http://www.52itstyle.com">科帮网<a/></td>
+        <td valign="bottom" align="center"> CopyRight &copy; 公子小白 <a href="#">850078615@qq.com<a/></td>
         <td width="141">&nbsp;</td>
       </tr>
       <tr>
         <td height="23">&nbsp;</td>
-        <td align="center">本站请使用IE6.0或以上版本 1024*768为最佳显示效果</td>
+        <td align="center">本网站设计和开发 by 公子小白</td>
         <td>&nbsp;</td>
       </tr>
       <tr>

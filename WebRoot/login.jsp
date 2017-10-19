@@ -2,7 +2,7 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
-<title>科帮网图书馆管理系统</title>
+<title>双河小学图书馆管理系统</title>
 <link href="CSS/style.css" rel="stylesheet">
 <script language="javascript">
 function check(form){
@@ -16,7 +16,7 @@ function check(form){
 </script>
 </head>
 <body">
-<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#F9D16B" class="tableBorder">
+<table width="778" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#D0D0D0" class="tableBorder">
   <tr>
     <td>
 <table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -33,7 +33,7 @@ function check(form){
   <tr>
     <td height="523" align="center" valign="top"><table width="100%" height="271"  border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td height="271" align="right" valign="top" class="word_orange"><table width="100%" height="255"  border="0" cellpadding="0" cellspacing="0" background="Images/login.jpg">
+        <td height="271" align="right" valign="top" class="word_orange"><table width="100%" height="255"  border="0" cellpadding="0" cellspacing="0" >
           <tr>
             <td height="57">&nbsp;</td>
             </tr>
@@ -85,8 +85,8 @@ function check(form){
     </table>
       <table width="100%" height="27"  border="0" cellpadding="0" cellspacing="0">
         <tr>
-          <td align="center" class="word_login">CopyRight &copy; 2013 www.52itstyle.com <a href="http://www.52itstyle.com">科帮网<a/><br>
-            本站请使用IE6.0或以上版本 1024*768为最佳显示效果</td>
+          <td align="center" class="word_login">CopyRight &copy; 公子小白 <a href="#">网站设计和编码:公子小白 <a/><br>
+            如果你在使用中遇到问题或者有任何功能上的建议请联系公子小白:850078615@qq.com</td>
         </tr>
       </table></td>
   </tr>

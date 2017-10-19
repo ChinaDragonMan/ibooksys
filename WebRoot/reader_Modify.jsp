@@ -171,7 +171,7 @@ function check(form){
           * </td>
       </tr>
       <tr>
-        <td align="center">电&nbsp;&nbsp;&nbsp;&nbsp;话：</td>
+        <td align="center">年&nbsp;&nbsp;&nbsp;&nbsp;级：</td>
         <td><input name="tel" type="text" id="tel" value="<%=tel%>"></td>
       </tr>
       <tr>

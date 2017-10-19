@@ -7,132 +7,179 @@ import org.apache.struts.action.*;
 import com.dao.ReaderDAO;
 import java.util.Date;
 
-public class Reader extends Action {
-    private ReaderDAO readerDAO = null;
-    public Reader() {
-        this.readerDAO = new ReaderDAO();
-    }
+public class Reader extends Action
+{
+	private ReaderDAO readerDAO = null;
 
-    public ActionForward execute(ActionMapping mapping, ActionForm form,
-                                 HttpServletRequest request,
-                                 HttpServletResponse response) {
-        String action =request.getParameter("action");
-        System.out.println("\nreader*********************action="+action);
-        if(action==null||"".equals(action)){
-            request.setAttribute("error","ÄúµÄ²Ù×÷ÓĞÎó£¡");
-            return mapping.findForward("error");
-        }else if("readerAdd".equals(action)){
-            return readerAdd(mapping,form,request,response);
-        }else if("readerQuery".equals(action)){
-            return readerQuery(mapping,form,request,response);
-        }else if("readerModifyQuery".equals(action)){
-            return readerModifyQuery(mapping,form,request,response);
-        }else if("readerModify".equals(action)){
-            return readerModify(mapping,form,request,response);
-        }else if("readerDel".equals(action)){
-            return readerDel(mapping,form,request,response);
-        }else if("readerDetail".equals(action)){
-            return readerDetail(mapping,form,request,response);
-        }
-        request.setAttribute("error","²Ù×÷Ê§°Ü£¡");
-        return mapping.findForward("error");
-    }
-    /***********************Ìí¼Ó¶ÁÕßĞÅÏ¢**************************/
-    private ActionForward readerAdd(ActionMapping mapping, ActionForm form,
-                           HttpServletRequest request,
-                           HttpServletResponse response){
-           ReaderForm readerForm = (ReaderForm) form;
-           readerForm.setName(readerForm.getName());
-           readerForm.setSex(readerForm.getSex());
-           readerForm.setBarcode(readerForm.getBarcode());
-           readerForm.setVocation(readerForm.getVocation());
-           readerForm.setBirthday(readerForm.getBirthday());
-           readerForm.setPaperType(readerForm.getPaperType());
-           readerForm.setPaperNO(readerForm.getPaperNO());
-           readerForm.setTel(readerForm.getTel());
-           readerForm.setEmail(readerForm.getEmail());
-           //»ñÈ¡ÏµÍ³ÈÕÆÚ
-           Date date1=new Date();
-           java.sql.Date date=new java.sql.Date(date1.getTime());
-           readerForm.setCreateDate(date.toString());
-           readerForm.setOperator(readerForm.getOperator());
-           readerForm.setRemark(readerForm.getRemark());
-           readerForm.setTypeid(readerForm.getTypeid());
-           int a=readerDAO.insert(readerForm);
-           if(a==0){
-               request.setAttribute("error","¶ÁÕßĞÅÏ¢Ìí¼ÓÊ§°Ü£¡");
-               return mapping.findForward("error");
-         }else if(a==2){
-             request.setAttribute("error","¸Ã¶ÁÕßĞÅÏ¢ÒÑ¾­Ìí¼Ó£¡");
-             return mapping.findForward("error");
-         }else{
-             return mapping.findForward("readerAdd");
-        }
-       }
-       /***********************²éÑ¯È«²¿¶ÁÕßĞÅÏ¢**************************/
-       private ActionForward readerQuery(ActionMapping mapping, ActionForm form,
-                              HttpServletRequest request,
-                              HttpServletResponse response){
-       String str=null;
-       request.setAttribute("reader",readerDAO.query(str));
-       return mapping.findForward("readerQuery");
-       }
-        /***********************²éÑ¯ĞŞ¸Ä¶ÁÕßĞÅÏ¢**************************/
-        private ActionForward readerModifyQuery(ActionMapping mapping, ActionForm form,
-                              HttpServletRequest request,
-                              HttpServletResponse response){
-            ReaderForm readerForm=(ReaderForm)form;
-            System.out.println("²éÑ¯ĞŞ¸Ä¶ÁÕßĞÅÏ¢£º"+request.getParameter("ID"));
-            readerForm.setId(Integer.valueOf(request.getParameter("ID")));
-            request.setAttribute("readerQueryif",readerDAO.queryM(readerForm));
-            return mapping.findForward("readerQueryModify");
-        }
-        /***********************²éÑ¯¶ÁÕßÏêÏ¸ĞÅÏ¢**************************/
-        private ActionForward readerDetail(ActionMapping mapping, ActionForm form,
-                              HttpServletRequest request,
-                              HttpServletResponse response){
-            ReaderForm readerForm=(ReaderForm)form;
-            readerForm.setId(Integer.valueOf(request.getParameter("ID")));
-            request.setAttribute("readerDetail",readerDAO.queryM(readerForm));
-            return mapping.findForward("readerDeatil");
-        }
-        /***********************ĞŞ¸Ä¶ÁÕßĞÅÏ¢**************************/
-        private ActionForward readerModify(ActionMapping mapping, ActionForm form,
-                              HttpServletRequest request,
-                              HttpServletResponse response){
-            ReaderForm readerForm=(ReaderForm)form;
-            readerForm.setName(readerForm.getName());
-            readerForm.setSex(readerForm.getSex());
-            readerForm.setBarcode(readerForm.getBarcode());
-            readerForm.setVocation(readerForm.getVocation());
-            readerForm.setBirthday(readerForm.getBirthday());
-            readerForm.setPaperType(readerForm.getPaperType());
-            readerForm.setPaperNO(readerForm.getPaperNO());
-            readerForm.setTel(readerForm.getTel());
-            readerForm.setEmail(readerForm.getEmail());
-            readerForm.setOperator(readerForm.getOperator());
-            readerForm.setRemark(readerForm.getRemark());
-            readerForm.setTypeid(readerForm.getTypeid());
-            int ret=readerDAO.update(readerForm);
-            if(ret==0){
-                request.setAttribute("error","ĞŞ¸Ä¶ÁÕßĞÅÏ¢Ê§°Ü£¡");
-                return mapping.findForward("error");
-            }else{
-                return mapping.findForward("readerModify");
-            }
-        }
-        /***********************É¾³ı¶ÁÕßĞÅÏ¢**************************/
-        private ActionForward readerDel(ActionMapping mapping, ActionForm form,
-                              HttpServletRequest request,
-                              HttpServletResponse response){
-            ReaderForm readerForm=(ReaderForm)form;
-            readerForm.setId(Integer.valueOf(request.getParameter("ID")));
-            int ret=readerDAO.delete(readerForm);
-            if(ret==0){
-                request.setAttribute("error","É¾³ı¶ÁÕßĞÅÏ¢Ê§°Ü£¡");
-                return mapping.findForward("error");
-            }else{
-                return mapping.findForward("readerDel");
-            }
-        }
+	public Reader()
+	{
+		this.readerDAO = new ReaderDAO();
+	}
+
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response)
+	{
+		String action = request.getParameter("action");
+		System.out.println("\nreader*********************action=" + action);
+		if (action == null || "".equals(action))
+		{
+			request.setAttribute("error", "ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+			return mapping.findForward("error");
+		} else if ("readerAdd".equals(action))
+		{
+			return readerAdd(mapping, form, request, response);
+		} else if ("readerQuery".equals(action))
+		{
+			return readerQuery(mapping, form, request, response);
+		} else if ("readerModifyQuery".equals(action))
+		{
+			return readerModifyQuery(mapping, form, request, response);
+		} else if ("readerModify".equals(action))
+		{
+			return readerModify(mapping, form, request, response);
+		} else if ("readerDel".equals(action))
+		{
+			return readerDel(mapping, form, request, response);
+		} else if ("readerDetail".equals(action))
+		{
+			return readerDetail(mapping, form, request, response);
+		} else if ("readerifQuery".equals(action))
+		{
+			// ç³»ç»ŸæŸ¥è¯¢ä¸‹é¢çš„è¯»è€…æ¡ä»¶æŸ¥è¯¢
+			return readerifQuery(mapping, form, request, response);
+		}
+
+		request.setAttribute("error", "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½");
+		return mapping.findForward("error");
+	}
+
+	/*********************** ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
+	private ActionForward readerAdd(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response)
+	{
+		ReaderForm readerForm = (ReaderForm) form;
+		readerForm.setName(readerForm.getName());
+		readerForm.setSex(readerForm.getSex());
+		readerForm.setBarcode(readerForm.getBarcode());
+		readerForm.setVocation(readerForm.getVocation());
+		readerForm.setBirthday(readerForm.getBirthday());
+		readerForm.setPaperType(readerForm.getPaperType());
+		readerForm.setPaperNO(readerForm.getPaperNO());
+		readerForm.setTel(readerForm.getTel());
+		readerForm.setEmail(readerForm.getEmail());
+		// ï¿½ï¿½È¡ÏµÍ³ï¿½ï¿½ï¿½ï¿½
+		Date date1 = new Date();
+		java.sql.Date date = new java.sql.Date(date1.getTime());
+		readerForm.setCreateDate(date.toString());
+		readerForm.setOperator(readerForm.getOperator());
+		readerForm.setRemark(readerForm.getRemark());
+		readerForm.setTypeid(readerForm.getTypeid());
+		int a = readerDAO.insert(readerForm);
+		if (a == 0)
+		{
+			request.setAttribute("error", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½");
+			return mapping.findForward("error");
+		} else if (a == 2)
+		{
+			request.setAttribute("error", "ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Ñ¾ï¿½ï¿½ï¿½Ó£ï¿½");
+			return mapping.findForward("error");
+		} else
+		{
+			return mapping.findForward("readerAdd");
+		}
+	}
+
+	/**
+	 * è¯»è€…æ¡ä»¶æŸ¥è¯¢
+	 * @param mapping
+	 * @param form
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	private ActionForward readerifQuery(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response)
+	{
+		String str = null;
+		request.setAttribute("reader", readerDAO.query(str));
+		return mapping.findForward("readerifQuery");
+	}
+	
+	
+	/*********************** ï¿½ï¿½Ñ¯È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
+	private ActionForward readerQuery(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response)
+	{
+		String str = null;
+		request.setAttribute("reader", readerDAO.query(str));
+		return mapping.findForward("readerQuery");
+	}
+
+	
+
+	/*********************** ï¿½ï¿½Ñ¯ï¿½Ş¸Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
+	private ActionForward readerModifyQuery(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response)
+	{
+		ReaderForm readerForm = (ReaderForm) form;
+		System.out.println("ï¿½ï¿½Ñ¯ï¿½Ş¸Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½" + request.getParameter("ID"));
+		readerForm.setId(Integer.valueOf(request.getParameter("ID")));
+		request.setAttribute("readerQueryif", readerDAO.queryM(readerForm));
+		return mapping.findForward("readerQueryModify");
+	}
+
+	/*********************** ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢ **************************/
+	private ActionForward readerDetail(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response)
+	{
+		ReaderForm readerForm = (ReaderForm) form;
+		readerForm.setId(Integer.valueOf(request.getParameter("ID")));
+		request.setAttribute("readerDetail", readerDAO.queryM(readerForm));
+		return mapping.findForward("readerDeatil");
+	}
+
+	/*********************** ï¿½Ş¸Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
+	private ActionForward readerModify(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response)
+	{
+		ReaderForm readerForm = (ReaderForm) form;
+		readerForm.setName(readerForm.getName());
+		readerForm.setSex(readerForm.getSex());
+		readerForm.setBarcode(readerForm.getBarcode());
+		readerForm.setVocation(readerForm.getVocation());
+		readerForm.setBirthday(readerForm.getBirthday());
+		readerForm.setPaperType(readerForm.getPaperType());
+		readerForm.setPaperNO(readerForm.getPaperNO());
+		readerForm.setTel(readerForm.getTel());
+		readerForm.setEmail(readerForm.getEmail());
+		readerForm.setOperator(readerForm.getOperator());
+		readerForm.setRemark(readerForm.getRemark());
+		readerForm.setTypeid(readerForm.getTypeid());
+		int ret = readerDAO.update(readerForm);
+		if (ret == 0)
+		{
+			request.setAttribute("error", "ï¿½Ş¸Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Ê§ï¿½Ü£ï¿½");
+			return mapping.findForward("error");
+		} else
+		{
+			return mapping.findForward("readerModify");
+		}
+	}
+
+	/*********************** É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
+	private ActionForward readerDel(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response)
+	{
+		ReaderForm readerForm = (ReaderForm) form;
+		readerForm.setId(Integer.valueOf(request.getParameter("ID")));
+		int ret = readerDAO.delete(readerForm);
+		if (ret == 0)
+		{
+			request.setAttribute("error", "É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Ê§ï¿½Ü£ï¿½");
+			return mapping.findForward("error");
+		} else
+		{
+			return mapping.findForward("readerDel");
+		}
+	}
 }

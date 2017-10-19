@@ -9,7 +9,7 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
-<title>科帮网图书馆管理系统</title>
+<title>双河小学图书馆管理系统</title>
 <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body onLoad="clockon(bgclock)">

@@ -63,6 +63,8 @@
     </action>
     <action name="readerForm" path="/reader" scope="request" type="com.action.Reader" validate="true">
       <forward name="readerQuery" path="/reader.jsp" />
+       <forward name="readerifQuery" path="/readerif.jsp" />
+      
       <forward name="readerAdd" path="/reader_ok.jsp?para=1" />
       <forward name="readerQueryModify" path="/reader_Modify.jsp" />
       <forward name="readerDeatil" path="/reader_detail.jsp" />

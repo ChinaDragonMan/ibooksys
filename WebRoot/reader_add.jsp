@@ -108,7 +108,7 @@ function check(form){
           * </td>
       </tr>
       <tr>
-        <td align="center">电话：</td>
+        <td align="center">年级：</td>
         <td><input name="tel" type="text" id="tel"></td>
       </tr>
       <tr>
