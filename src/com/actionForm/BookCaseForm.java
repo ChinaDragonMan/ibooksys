@@ -2,26 +2,33 @@ package com.actionForm;
 
 import org.apache.struts.action.ActionForm;
 
-public class BookCaseForm extends ActionForm {
-    private Integer id;
-    private String name;
-    //¹¹Ôì·½·¨
-    public BookCaseForm(){
-    }
-    public Integer getId() {
-        return id;
-    }
+public class BookCaseForm extends ActionForm
+{
+	private Integer id;
+	private String name;
+	// ï¿½ï¿½ï¿½ì·½ï¿½ï¿½
+	public BookCaseForm()
+	{
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Integer getId()
+	{
+		return id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setId(Integer id)
+	{
+		this.id = id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public String getName()
+	{
+		return name;
+	}
 
 }
